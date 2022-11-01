@@ -1,2 +1,2 @@
-# HalloweenSlotMachine
-Simple Halloween Slot Machine made using jQuery-jSlots
+# VapeBoySlots
+Slot Machine made using jQuery-jSlots
