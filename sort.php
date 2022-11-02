@@ -14,6 +14,6 @@ switch($bonus) {
 		$slotMachine->DoBonus();
 		break;
 	case 'lucky':
-		$slotMachine->GenSlots();
+		$slotMachine->genSlots();
 		break;
 }

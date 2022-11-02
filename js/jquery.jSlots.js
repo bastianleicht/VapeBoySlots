@@ -45,6 +45,8 @@ function sleep(milliseconds) {
             number : 3,          // Number: number of slots
             winnerNumber : 1,    // Number or Array: list item number(s) upon which to trigger a win, 1-based index, NOT ZERO-BASED
             spinner : '',        // CSS Selector: element to bind the start event to
+			autoplay: '#buttonAutoSpin',
+			autoplayEvent: 'click',
             spinEvent : 'click', // String: event to start slots on this event
             onStart : $.noop,    // Function: runs on spin start,
             onEnd : $.noop,      // Function: run on spin end. It is passed (finalNumbers:Array). finalNumbers gives the index of the li each slot stopped on in order.
@@ -97,6 +99,10 @@ function sleep(milliseconds) {
 		base.betAward	= 0;
 		base.showLines	= false;
 		base.ILines		= [];
+
+		// Free Spins
+		base.freeSpins = false;
+		base.freeSpinCounter = 0;
 		
 		base.awardValue	= '';
 		base.matchLines;
@@ -205,14 +211,14 @@ function sleep(milliseconds) {
         base.setup = function() {
 
             // set sizes
-			base.pushObj(base._objs, 'objItem6',			8);
+			base.pushObj(base._objs, 'objItem6',		8);
 			base.pushObj(base._objs, 'objItem12',	 	4);
 			base.pushObj(base._objs, 'objItem9',		4);
 			base.pushObj(base._objs, 'objItem4',		3);
 			base.pushObj(base._objs, 'objItem5',		3);
-			base.pushObj(base._objs, 'objItem1',			3);
+			base.pushObj(base._objs, 'objItem1',		3);
 			base.pushObj(base._objs, 'objItem10',		3);
-			base.pushObj(base._objs, 'objItem7',			2);
+			base.pushObj(base._objs, 'objItem7',		2);
 			base.pushObj(base._objs, 'objItem8',		2);
 			base.pushObj(base._objs, 'objItem3',		2);			
 			base.pushObj(base._objs, 'objItem11',		1);
@@ -241,14 +247,14 @@ function sleep(milliseconds) {
             $dvCol.remove();
 
             // clone lists
-            for (var i = base.options.number - 1; i >= 0; i--){
+            for (let i = base.options.number - 1; i >= 0; i--){
                 base.allSlots.push( new base.Slot(i) );
             }
 
         };
 		
 		base.drawCanvas = function(){
-			addCanvas = 120;
+			let addCanvas = 120;
 			$('canvas').remove();
 			
 			$center = $('.dvCenter');
@@ -265,8 +271,8 @@ function sleep(milliseconds) {
 			base.betValue = base.betBase*base.betLines;
 			
 			$('#betBase').html('x'+base.betBase);
-			$('#betValue').html(float2Coins((base.betValue/100), '&euro; '));
-			$('#betCredits').html(float2Coins((base.betCredits/100), '&euro; '));
+			$('#betValue').html(float2Coins((base.betValue/100), ''));
+			$('#betCredits').html(float2Coins((base.betCredits/100), ''));
 			if (base.betAward === 0 ) {
 				$('#betAward').html('&nbsp;');
 			} else {
@@ -365,11 +371,32 @@ function sleep(milliseconds) {
 		};
 
         base.bindEvents = function() {
+			// Entry Point "Spin" Button
             $(base.options.spinner).bind(base.options.spinEvent, function(event) {
                 if (!base.isSpinning) {
+					// TODO: Add Check for Free Plays
+					if(base.freeSpins && base.freeSpinCounter <= 10) {
+						base.playSlots(true);
+						base.freeSpinCounter--;
+						if(base.freeSpinCounter === 0) base.freeSpins = false;
+					}
                     base.playSlots();
                 }
             });
+
+			$(base.options.autoplay).bind(base.options.autoplayEvent, function(event) {
+				base.playAuto	= !base.playAuto;
+				let htmlElement = base.options.autoplay.replace('#', '');
+				if(base.playAuto === true) {
+					console.log('Enabled AutoPlay')
+					document.getElementById(htmlElement).classList.add('twolined');
+					document.getElementById(htmlElement).innerHTML = '<div class="twolined"><div class="infoValueUnlimited">AUTO OFF</div></div>';
+				} else {
+					console.log('Disabled AutoPlay')
+					document.getElementById(htmlElement).classList.remove('twolined');
+					document.getElementById(htmlElement).innerHTML = 'AUTO';
+				}
+			});
         };
 		
 		$(window).on('resize', function(){
@@ -424,6 +451,7 @@ function sleep(milliseconds) {
 					}
 					break;
 			}
+			// Enter
 			if (cc === 13) {
 				if (!base.isSpinning) {
 					base.playSlots();
@@ -467,7 +495,7 @@ function sleep(milliseconds) {
 
                 var that = this;
 				
-				if (that.loopCount == 0) {
+				if (that.loopCount === 0) {
 					for (i=4; i<=6; i++) {
 						that.$el.find('li:nth-child('+(i)+')').removeClass().addClass(that.$el.find('li:nth-child('+(i-3)+')').attr('class'));
 						//alert(i);
@@ -478,7 +506,7 @@ function sleep(milliseconds) {
 					that.$el.find('li:nth-child('+(i+3)+')').removeClass().addClass(that.$el.find('li:nth-child('+i+')').attr('class'));
 				}/**/
 				
-				if (that.loopCount != 0) {
+				if (that.loopCount !== 0) {
 					$(that.$el.find('li:nth-child(-n+3)').get().reverse()).each(function (){
 						$(this).removeClass().addClass(base.randomObj(base._objs));
 						
@@ -576,7 +604,11 @@ function sleep(milliseconds) {
 			if ((playBonusSound) && (soundEl['bonus'].paused)) {
 				soundEl['bonus'].play();
 			}
-			
+
+			base.freeSpins = true;
+			base.freeSpinCounter = 10;
+
+			/*
 			if (base.curBonus === 'bonusCauldron') {
 				$('#CauldronLine').find('div').each(function() {						
 							$(this).html('');
@@ -584,6 +616,7 @@ function sleep(milliseconds) {
 				$('#bonusCauldron').show();				
 				soundEl['cauldron'].play();
 			}
+			 */
 		};
 
         base.checkWinner = function(endNum, slot) {
@@ -691,7 +724,8 @@ function sleep(milliseconds) {
         };
 
 
-        base.playSlots = function() {
+		// TODO: Add Free Play
+        base.playSlots = function(free_play) {
 		
 			if ((base.betCredits - base.betValue) < 0) {
 				//base.betCredits += 1000;

@@ -1,0 +1,1333 @@
+@charset "utf-8";
+/*
+body, html {
+	margin				: 0;
+	padding				: 0;
+	font-family: arial, serif;
+	font-size			: 12px;
+	position			: relative;
+
+}
+html {
+	height				: 100%;
+}
+body {
+	position			: absolute;
+	background-position	: center;
+	background-repeat	: no-repeat;
+	background-color	: black;
+	overflow			: hidden;
+
+	min-height			: 100%;
+	width				: 100%;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+button:focus {outline:0;}
+*/
+ul {
+	padding				: 0;
+	margin				: 0;
+	list-style			: none;
+}
+
+
+.dvCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -60px;
+    margin-top: -60px;
+}
+
+.dvLoading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    z-index: 10;
+    font-family: Tahoma;
+}
+
+.jSlots-wrapper {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: inline-block; /* to size correctly, can use float too, or width*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.dvTop {
+
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 30px;
+
+
+}
+
+.tbInfo {
+    color: white;
+    font-weight: bold;
+    border-collapse: collapse;
+    font-size: 20px;
+    width: 100%;
+}
+
+.tbInfo td {
+
+}
+
+
+.dvBox {
+    background: #c4032d; /* Old browsers */
+    background: -moz-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c4032d), color-stop(100%, #a3030d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #c4032d 0%, #a3030d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4032d', endColorstr='#a3030d', GradientType=0); /* IE6-9 */
+
+
+    border: 2px solid gold;
+    padding: 5px 12px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*.dvCenter {
+	position			: relative;
+	width				: 80%;
+	height				: 70%;
+	margin				: 0 auto;
+
+	border				: 1px solid red;
+} /**/
+
+.dvGame {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 40%; /* 16:9 */
+}
+
+.dvGame > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.dvCol {
+    height: 100%;
+    width: 19.6%;
+    float: left;
+    background: #222222;
+    background: -moz-linear-gradient(top, #222222 0%, #444444 50%, #222222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222222), color-stop(50%, #444444), color-stop(100%, #222222));
+    background: -webkit-linear-gradient(top, #222222 0%, #444444 50%, #222222 100%);
+    background: -o-linear-gradient(top, #222222 0%, #444444 50%, #222222 100%);
+    background: -ms-linear-gradient(top, #222222 0%, #444444 50%, #222222 100%);
+    background: linear-gradient(to bottom, #222222 0%, #444444 50%, #222222 100%);
+
+    background: linear-gradient(to bottom, #7AC 0%, #CCC 50%, #7AC 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222222', endColorstr='#222222', GradientType=0);
+    border: 1px solid silver;
+    position: relative;
+}
+
+.ulSlot {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.source-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.dvFoot {
+    width: 80%;
+    margin: 0 auto;
+    height: 10%;
+    padding: 10px;
+}
+
+.dvMsg {
+    color: white;
+}
+
+._dvBtnPlay {
+    float: right;
+    color: white;
+    font-size: 24px;
+    width: 140px;
+    border-color: silver;
+    cursor: pointer;
+}
+
+.dvBtnPlay {
+    font-family: Tahoma;
+    position: relative;
+    color: white;
+    background-color: #c00;
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+    padding: 10px 5px;
+    width: 160px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    border: 1px solid gray;
+    top: 0;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
+    box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
+
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+
+}
+
+.dvBtnPlay:active {
+    -webkit-box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
+    -moz-box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
+    box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
+    position: relative;
+    top: 6px;
+}
+
+.dvBetBase {
+    float: right;
+    position: absolute;
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.dvSizeNull {
+    width: 0;
+    height: 0;
+}
+
+/* ---- Specific ---- */
+
+.objItem1, .objItem2, .objItem3, .objItem4, .objItem5, .objItem6, .objItem7, .objItem8, .objItem9, .objItem10, .objItem11, .objItem12 {
+    height: 33.33%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    /*border				: 1px solid silver; /**/
+}
+
+.objItem1 {
+    background-image: url('../images/items/placeholder.png');
+}
+
+.objItem2 {
+    background-image: url('../images/items/womanVape.png');
+}
+
+.objItem3 {
+    background-image: url('../images/items/smokingForbidden.png');
+}
+
+.objItem4 {
+    background-image: url('../images/items/placeholder.png');
+}
+
+.objItem5 {
+    background-image: url('../images/items/smokingForbidden.png');
+}
+
+.objItem6 {
+    background-image: url('../images/items/vape-cloud.png');
+}
+
+.objItem7 {
+    background-image: url('../images/items/liquid.png');
+}
+
+.objItem8 {
+    background-image: url('../images/items/alex.png');
+}
+
+.objItem9 {
+    background-image: url('../images/items/vapeMarket.png');
+}
+
+.objItem10 {
+    background-image: url('../images/items/vape-pen.png');
+}
+
+.objItem11 {
+    background-image: url('../images/items/vape1.png');
+}
+
+.objItem12 {
+    background-image: url('../images/items/placeholder.png');
+}
+
+.bonusCauldron {
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+    color: white;
+    font-size: 40px;
+
+    display: none;
+
+}
+
+.dvCauldronTop {
+    padding-top: 40px;
+    position: relative;
+    height: 70%;
+    text-align: center;
+    /*background-image	: url('http://www.artist-reference.com/wp-content/gallery/textures-r-us-photogallery/1-tru-hand-drawn-seamless-stone-sample.png'); /**/
+
+}
+
+.dvCauldronLine {
+
+    position: absolute;
+    bottom: 20px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: 42%;
+    width: 80%;
+    display: inline-block; /* to size correctly, can use float too, or width*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.objLineCauldron {
+    position: relative;
+    background-image: url('../imgs_old/cauldron.png');
+    height: 100%;
+    width: 20%;
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 70%;
+    text-align: center;
+}
+
+.dvCauldronData {
+    height: 30%;
+    background-image: url('../imgs_old/textureCauldron.jpg');
+    background-size: cover;
+    font-size: 16px;
+}
+
+.inpCauldron {
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+
+.dvHelp {
+    z-index: 20;
+    position: fixed;
+    background-color: black;
+    border: 1px solid black;
+    opacity: 0.9;
+    width: 60%;
+    height: 80%;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    display: none;
+}
+
+
+/* ---------------------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------------------- */
+
+@-webkit-keyframes winner {
+    0%, 50%, 100% {
+        -webkit-transform: rotate(0deg);
+        font-size: 70px;
+        color: #fff;
+    }
+    25% {
+        -webkit-transform: rotate(20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+    75% {
+        -webkit-transform: rotate(-20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+}
+
+@-moz-keyframes winner {
+    0%, 50%, 100% {
+        -moz-transform: rotate(0deg);
+        font-size: 70px;
+        color: #fff;
+    }
+    25% {
+        -moz-transform: rotate(20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+    75% {
+        -moz-transform: rotate(-20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+}
+
+@-ms-keyframes winner {
+    0%, 50%, 100% {
+        -ms-transform: rotate(0deg);
+        font-size: 70px;
+        color: #fff;
+    }
+    25% {
+        -ms-transform: rotate(20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+    75% {
+        -ms-transform: rotate(-20deg);
+        font-size: 90px;
+        color: #FF16D8;
+    }
+}
+
+
+@-webkit-keyframes winnerBox {
+    0%, 50%, 100% {
+        box-shadow: inset 0 0 0px yellow;
+        background-color: #FF0000;
+    }
+    25%, 75% {
+        box-shadow: inset 0 0 30px yellow;
+        background-color: aqua;
+    }
+}
+
+@-moz-keyframes winnerBox {
+    0%, 50%, 100% {
+        box-shadow: inset 0 0 0px yellow;
+        background-color: #FF0000;
+    }
+    25%, 75% {
+        box-shadow: inset 0 0 30px yellow;
+        background-color: aqua;
+    }
+}
+
+@-ms-keyframes winnerBox {
+    0%, 50%, 100% {
+        box-shadow: inset 0 0 0px yellow;
+        background-color: #FF0000;
+    }
+    25%, 75% {
+        box-shadow: inset 0 0 30px yellow;
+        background-color: aqua;
+    }
+}
+
+
+.winner {
+    -webkit-animation: winnerBox 2s infinite linear;
+    -moz-animation: winnerBox 2s infinite linear;
+    -ms-animation: winnerBox 2s infinite linear;
+}
+
+.winner span {
+    -webkit-animation: winner 2s infinite linear;
+    -moz-animation: winner 2s infinite linear;
+    -ms-animation: winner 2s infinite linear;
+}
+
+/**
+NOTE: START NEW CSS
+ */
+
+@charset "utf-8";
+* {
+    -webkit-tap-highlight-color: transparent
+}
+
+.container * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none
+}
+
+/* TODO: Check if needed!*/
+.errorPopup .closeButton {
+    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-error-close.png)
+}
+
+.errorPopup .reconnectButton {
+    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect.png)
+}
+
+.errorPopup .reconnectButton:hover {
+    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect-mo.png)
+}
+
+.errorPopup .reconnectButton:active {
+    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect-press.png)
+}
+
+.container {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.container.fullscreen {
+    overflow: visible !important
+}
+
+.container.l23 {
+    height: 853px
+}
+
+.container.l169 {
+    height: 720px
+}
+
+.headlineContainer {
+    position: relative;
+    width: 1280px;
+    height: 133px;
+    z-index: 1
+}
+
+.gameContainer {
+    position: relative;
+    width: 1280px;
+    height: 604px;
+    z-index: 1;
+    background-repeat: no-repeat
+}
+
+.mainControlBox, .mainControlBoxBG {
+    position: relative;
+    width: 1280px;
+    height: 116px;
+    z-index: 3
+}
+
+.popupContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 256
+}
+
+#maxiplay_container {
+    position: absolute;
+    top: 14px;
+    left: 107px;
+    z-index: 42;
+    overflow: hidden;
+    width: 1066px;
+    height: 576px
+}
+
+.errorContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1
+}
+
+.errorPopupBG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    background-color: #000;
+    opacity: .4
+}
+
+.errorContainer + .errorContainer .errorPopupBG {
+    background-color: transparent
+}
+
+.container.l23 .popupContainer .errorPopupBG {
+    height: 853px
+}
+
+.container.l169 .popupContainer .errorPopupBG {
+    height: 720px
+}
+
+.errorPopup {
+    position: relative;
+    width: 900px;
+    height: 452px;
+    left: 186px;
+    color: #fff;
+    text-align: center;
+    border: 4px solid #494949;
+    font-family: 'Roboto Condensed', Arial;
+    background-color: #000
+}
+
+.container.l23 .errorPopup {
+    top: 206px
+}
+
+.container.l169 .errorPopup {
+    top: 72px
+}
+
+.errorPopup .closeButton {
+    position: absolute;
+    right: -2px;
+    top: 2px;
+    width: 74px;
+    height: 74px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer
+}
+
+.errorPopup .reconnectButton {
+    position: relative;
+    margin: 75px auto 0;
+    width: 340px;
+    height: 94px;
+    cursor: pointer
+}
+
+.errorPopup.preloadError .reconnectButton {
+    margin-top: 40px
+}
+
+html[lang=en] .errorPopup.preloadError .reconnectButton {
+    margin-top: 72px
+}
+
+html[lang=jp] .errorPopup .reconnectButton {
+    margin-top: 60px
+}
+
+.errorPopup .reconnectButton .buttonText {
+    width: 337px;
+    height: 77px;
+    font-size: 44px;
+    padding-top: 20px;
+    font-weight: 700;
+    text-align: center
+}
+
+html[lang=bg] .errorPopup .reconnectButton .buttonText.NewLoad {
+    font-size: 36px;
+    padding-top: 26px
+}
+
+html[lang=bg] .errorPopup .reconnectButton .buttonText.Reconnect {
+    font-size: 26px;
+    padding-top: 32px
+}
+
+html[lang=el] .errorPopup .reconnectButton .buttonText {
+    font-size: 36px;
+    padding-top: 26px
+}
+
+html[lang=es] .errorPopup .reconnectButton .buttonText {
+    font-size: 40px;
+    padding-top: 22px
+}
+
+html[lang=fi] .errorPopup .reconnectButton .buttonText {
+    font-size: 36px;
+    padding-top: 26px
+}
+
+html[lang=hr] .errorPopup .reconnectButton .buttonText {
+    font-size: 42px;
+    padding-top: 22px
+}
+
+html[lang=nl] .errorPopup .reconnectButton .buttonText {
+    font-size: 34px;
+    padding-top: 26px
+}
+
+html[lang=no] .errorPopup .reconnectButton .buttonText {
+    font-size: 38px;
+    padding-top: 22px
+}
+
+html[lang=pl] .errorPopup .reconnectButton .buttonText {
+    font-size: 36px;
+    padding-top: 26px
+}
+
+html[lang=ru] .errorPopup .reconnectButton .buttonText {
+    font-size: 36px;
+    padding-top: 26px
+}
+
+html[lang=sr] .errorPopup .reconnectButton .buttonText {
+    font-size: 33px;
+    padding-top: 27px
+}
+
+html[lang=zh] .errorPopup .reconnectButton .buttonText {
+    padding-left: 20px
+}
+
+.errorPopup .errorText {
+    position: relative;
+    margin: 82px auto 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1
+}
+
+html[lang=dk] .errorPopup.preloadError .errorText {
+    padding-top: 38px
+}
+
+html[lang=en] .errorPopup.preloadError .errorText {
+    margin-top: 108px
+}
+
+html[lang=et] .errorPopup.preloadError .errorText {
+    padding-top: 38px
+}
+
+html[lang=fi] .errorPopup.preloadError .errorText {
+    padding-top: 38px
+}
+
+html[lang=jp] .errorPopup.preloadError .errorText {
+    font-size: 45px;
+    padding-top: 38px
+}
+
+html[lang=no] .errorPopup.preloadError .errorText {
+    padding-top: 38px
+}
+
+html[lang=ro] .errorPopup .errorText {
+    font-size: 46px
+}
+
+html[lang=se] .errorPopup.preloadError .errorText {
+    padding-top: 38px
+}
+
+html[lang=vi] .errorPopup.preloadError .errorText {
+    font-size: 48px
+}
+
+#freegame_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 1280px;
+    height: 604px;
+    z-index: 15
+}
+
+.loaded .gameContainer {
+    background-image: url('../images/background/bg_middle.png')
+}
+
+.loaded .headlineContainer {
+    background-image: url('../images/background/bg_top.png')
+}
+
+.loaded .mainControlBoxBG {
+    background-image: url(../new_ui/bg_bottom.jpg)
+}
+
+.mainControlBox .webConsole {
+    background-image: url(../new_ui/console_web_bg.png)
+}
+
+.webConsole .userInfoContainer.userInfo {
+    background-image: url(../new_ui/infobox-standard.png)
+}
+
+.webConsole .controlButton_paytable {
+    background-image: url(../new_ui/button-paytable.png)
+}
+
+.webConsole .controlButton_paytable:hover {
+    background-image: url(../new_ui/button-paytable-mo.png)
+}
+
+.webConsole .controlButton_paytable:active {
+    background-image: url(../new_ui/button-paytable-press.png)
+}
+
+.webConsole .controlButtonGreen {
+    background-image: url(../new_ui/button-green.png)
+}
+
+.webConsole .controlButtonGreen:hover {
+    background-image: url(../new_ui/button-green-mo.png)
+}
+
+.webConsole .controlButtonGreen:active {
+    background-image: url(../new_ui/button-green-press.png)
+}
+
+.webConsole .controlButtonGreen.isPulsing.pulse {
+    background-image: url(../new_ui/button-green-pulse.png)
+}
+
+.webConsole .controlButtonGreen.isPulsing.pulse:hover {
+    background-image: url(../new_ui/button-green-mo.png)
+}
+
+.webConsole .controlButtonGreen.isPulsing.pulse:active {
+    background-image: url(../new_ui/button-green-press.png)
+}
+
+.webConsole .spinButton {
+    background-image: url(../new_ui/buttons-spin.png)
+}
+
+.webConsole .spinButton {
+    background-position: top left
+}
+
+.webConsole .spinButton:hover {
+    background-position: bottom left
+}
+
+.webConsole .spinButton:active {
+    background-position: top right
+}
+
+.webConsole .spinButton.isPulsing.pulse {
+    background-position: center right
+}
+
+.webConsole .spinButton.isPulsing.pulse:hover {
+    background-position: bottom left
+}
+
+.webConsole .spinButton.isPulsing.pulse:active {
+    background-position: top right
+}
+
+.webConsole .controlButtonOrange {
+    background-image: url(../new_ui/button-orange.png)
+}
+
+.webConsole .controlButtonOrange .clickArea.plus {
+    background-image: url(../new_ui/button-orange-plus.png)
+}
+
+.webConsole .controlButtonOrange .clickArea.plus:active, .webConsole .controlButtonOrange .clickArea.plus:hover {
+    background-image: url(../new_ui/button-orange-plus-mo.png)
+}
+
+.webConsole .controlButtonOrange .clickArea.minus {
+    background-image: url(../new_ui/button-orange-minus.png)
+}
+
+.webConsole .controlButtonOrange .clickArea.minus:active, .webConsole .controlButtonOrange .clickArea.minus:hover {
+    background-image: url(../new_ui/button-orange-minus-mo.png)
+}
+
+.webConsole .controlButtonViolet {
+    background-image: url(../new_ui/button-violet.png)
+}
+
+.webConsole .controlButtonViolet:hover {
+    background-image: url(../new_ui/button-violet-mo.png)
+}
+
+.webConsole .controlButtonViolet:active {
+    background-image: url(../new_ui/button-violet-press.png)
+}
+
+.webConsole .controlButtonViolet.isPulsing.pulse {
+    background-image: url(../new_ui/button-violet-pulse.png)
+}
+
+.webConsole .controlButtonViolet.isPulsing.pulse:hover {
+    background-image: url(../new_ui/button-violet-mo.png)
+}
+
+.webConsole .controlButtonViolet.isPulsing.pulse:active {
+    background-image: url(../new_ui/button-violet-press.png)
+}
+
+.webConsole .controlButton_settings {
+    background-image: url(../new_ui/buttons-settings.png)
+}
+
+.webConsole .controlButton_settings:active, .webConsole .controlButton_settings:hover {
+    background-position: bottom
+}
+
+.webConsole .controlButton_fullscreen {
+    background-image: url(../new_ui/buttons-fullscreen.png)
+}
+
+.webConsole .controlButton_fullscreen:active, .webConsole .controlButton_fullscreen:hover {
+    background-position: bottom
+}
+
+.console .controlButton {
+    background-repeat: no-repeat
+}
+
+.console {
+    position: absolute;
+    z-index: 200;
+    font-family: 'Roboto Condensed', Arial;
+    font-weight: 700;
+    padding-top: 6px
+}
+
+.webConsole {
+    left: 50px;
+    width: 1180px;
+    height: 110px
+}
+
+.console .clockAndGameRoundIdDisplay, .console .versionDisplay {
+    position: absolute;
+    top: -604px;
+    padding: 0 8px;
+    background-color: rgba(0, 0, 0, .7);
+    font-size: 16px;
+    color: #fff
+}
+
+.console .clockAndGameRoundIdDisplay {
+    font-size: 20px
+}
+
+.l23 .console .clockAndGameRoundIdDisplay, .l23 .console .versionDisplay {
+    top: -737px
+}
+
+.l169 .console .clockAndGameRoundIdDisplay, .l169 .console .versionDisplay {
+    top: -604px
+}
+
+.webConsole .versionDisplay {
+    left: -50px
+}
+
+.webConsole .clockAndGameRoundIdDisplay {
+    right: -50px
+}
+
+.console .versionDisplay .slotSessionStats {
+    padding-left: 26px
+}
+
+.console .versionDisplay .slotSessionStats .currLeft {
+    padding-right: 2px
+}
+
+.console .clockAndGameRoundIdDisplay span + span {
+    padding-left: 8px
+}
+
+.console .controlButton {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer
+}
+
+.console .controlButton.justShow {
+    cursor: default
+}
+
+.console .clickArea {
+    cursor: pointer
+}
+
+.console .userInfoContainer {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none
+}
+
+.webConsole .controlButton {
+    width: 98px;
+    height: 69px;
+    margin-left: 2px;
+    padding: 36px 3px 2px 1px;
+    border-radius: 3px;
+    font-size: 28px
+}
+
+.webConsole .controlButton.tiny {
+    width: 50px
+}
+
+.webConsole .controlButton.small {
+    width: 70px
+}
+
+.webConsole .controlButton.big {
+    width: 148px
+}
+
+.webConsole .mainBox {
+    position: relative
+}
+
+.webConsole .actionButtons {
+    position: absolute;
+    top: 0;
+    right: 4px
+}
+
+.webConsole .controlButton_paytable {
+    width: 52px;
+    margin-left: 6px
+}
+
+.webConsole .controlButton.twolined {
+    height: 84px;
+    padding-top: 21px;
+    line-height: 32px
+}
+
+.webConsole .controlButton_stopautospin .infoValue {
+    font-size: 34px
+}
+
+.webConsole .controlButton_stopautospin .infoLabel {
+    font-size: 20px
+}
+
+.webConsole .userInfoContainer {
+    height: 107px;
+    margin-left: 2px
+}
+
+.webConsole .userInfoContainer .row1, .webConsole .userInfoContainer .row1 .userInfoBox {
+    position: relative;
+    height: 66px
+}
+
+.webConsole .userInfoContainer .row1 .userInfoBox {
+    padding-top: 14px;
+    font-size: 38px;
+    font-weight: 700
+}
+
+.webConsole .userInfoContainer.userInfo .row1 .userInfoBox {
+    width: 570px;
+    left: 14px
+}
+
+.webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_jackpotBonus, .webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_jackpotWin, .webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_win {
+    position: relative;
+    top: -10px;
+    font-size: 50px
+}
+
+.webConsole .userInfoContainer .row2, .webConsole .userInfoContainer .row2 .userInfoBox {
+    height: 44px
+}
+
+.webConsole .userInfoContainer .row2 .userInfoBox .infoLabel {
+    font-size: 16px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer {
+    width: 150px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange {
+    width: 70px;
+    margin: 0;
+    cursor: default
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .clickArea {
+    position: absolute;
+    left: 6px;
+    width: 61px;
+    height: 23px;
+    cursor: pointer
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .clickArea.controlButton_linebetplus, .webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .clickArea.controlButton_linesplus {
+    top: 2px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .clickArea.controlButton_linebetminus, .webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .clickArea.controlButton_linesminus {
+    top: 79px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea {
+    position: relative;
+    width: 70px;
+    height: 52px;
+    margin-top: -8px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue {
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    width: 70px;
+    height: 34px;
+    overflow: hidden;
+    font-size: 28px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_5 {
+    font-size: 24px;
+    height: 31px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_6 {
+    font-size: 19px;
+    height: 27px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_7 {
+    font-size: 16px;
+    height: 26px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_8 {
+    font-size: 14px;
+    height: 25px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_9 {
+    font-size: 13px;
+    height: 24px
+}
+
+.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoLabel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 20px;
+    font-size: 16px
+}
+
+.webConsole .userInfoContainer.userInfo {
+    width: 598px
+}
+
+.webConsole .userInfoContainer .row2 {
+    position: relative
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox.leftBox {
+    position: absolute;
+    left: 14px;
+    text-align: left
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox.rightBox {
+    position: absolute;
+    right: 14px;
+    text-align: right
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox.value_money .infoLabel.moneyLabel {
+    display: inline
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox.value_money .infoLabel.totalmoneyLabel {
+    display: none
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox .infoValue {
+    padding-left: 8px;
+    font-size: 28px
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox .fontsizeFaker {
+    font-size: 28px
+}
+
+.webConsole .userInfoContainer.userInfo .row2 .userInfoBox .infoValue .currLeft {
+    padding-right: 3px
+}
+
+.webConsole .userInfoContainer.userInfo .userInfoBox .info_win .value .currLeft {
+    padding-right: 5px
+}
+
+.webConsole .userInfoContainer.userInfo .userInfoBox .info_lastWin .value .currLeft {
+    padding-right: 4px
+}
+
+.webConsole .headlineButtons {
+    position: absolute;
+    top: -702px;
+    left: -18px
+}
+
+.webConsole .headlineButtons .controlButton {
+    width: 34px;
+    height: 32px;
+    padding: 0;
+    margin: 0
+}
+
+.webConsole .headlineButtons .controlButton + .controlButton {
+    margin-left: 5px
+}
+
+.webConsole .reelClickBox {
+    position: absolute;
+    left: 57px;
+    bottom: 130px;
+    width: 1066px;
+    height: 576px;
+    padding: 0
+}
+
+.webConsole.bg .controlButtonViolet {
+    font-size: 26px
+}
+
+.webConsole.bg .controlButton_stopautospin .infoLabel {
+    font-size: 15px
+}
+
+.webConsole.et .controlButton_autospin {
+    font-size: 16px;
+    padding-top: 42px;
+    height: 63px
+}
+
+.webConsole.et .controlButton_stopautospin {
+    font-size: 16px
+}
+
+.webConsole.et .controlButton_stopautospin .infoLabel {
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 6px
+}
+
+.webConsole.fr .controlButton_stopautospin {
+    font-size: 15px
+}
+
+.webConsole.fr .controlButton_stopautospin .infoLabel {
+    font-size: 15px;
+    line-height: 16px;
+    padding-top: 6px
+}
+
+html {
+    height: 100%
+}
+
+body {
+    font-family: Arial, Sans-serif;
+    font-size: 12px;
+    color: #444;
+    padding: 0;
+    margin: 0;
+    height: 100%
+}
+
+div {
+    margin: 0;
+    padding: 0
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clear {
+    clear: both
+}
+
+.hidden {
+    display: none
+}
+
+.visible {
+    display: block
+}

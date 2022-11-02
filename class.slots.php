@@ -1,6 +1,6 @@
 <?php
-	 
-	class TPoint {
+
+class TPoint {
 		public int $x = 0;
 		public int $y = 0;
 		
@@ -20,14 +20,14 @@
 			'objItem12'		=>	2,
 			'objItem9'		=>	3,
 			'objItem4'		=>	5,
-			'objItem5'	=>	10,
+			'objItem5'		=>	10,
 			'objItem1'		=>	14,
 			'objItem10'		=>	26,
 			'objItem7'		=>	30,
 			'objItem8'		=>	40,
-			'objItem3'	=>	40,
+			'objItem3'		=>	40,
 			'objItem11'		=>	60,
-			'objItem2'	=>	90
+			'objItem2'		=>	90
 		);
 		
 		private array $Lines = array();
@@ -159,7 +159,8 @@
 			
 		}
 		
-		public function DoBonus() {
+		public function DoBonus(): void
+		{
 			//$curBonus	= array_shift($_SESSION['Bonus']);
 			$curBonus 	= 'bonusCauldron';
 			$k			= (int)$_GET['k'];
@@ -183,16 +184,23 @@
 		}
 		
 		
-		public function GenSlots() {
+		public function genSlots(): void
+		{
 			if (!$this->canPlay()) {
+				// This currently breaks the game.
+				/*
 				echo $_SESSION['Bonus'][0];
 				exit;
+				*/
+				
+				// This should fix it temporarily
+				unset($_SESSION['Bonus'][0]);
 			}
 		
 			$GLOBALS['base'] = (isset($_REQUEST['b'])) ? (int)$_REQUEST['b'] : 1;		
 			$GLOBALS['lines'] = (isset($_REQUEST['l'])) ? (int)$_REQUEST['l'] : 1;
 		
-			$Cols = array();
+			$columns = array();
 			for ($i=1; $i<=5; $i++) {
 				$SlotsItems = array();
 				for ($j=1; $j<=3; $j++) {
@@ -200,16 +208,16 @@
 					//array_rand($this->_objItems, 1)
 					$SlotsItems[] = $this->_objItems[array_rand($this->_objItems, 1)];
 				}
-				$Cols[] = $SlotsItems;
+				$columns[] = $SlotsItems;
 			}
-			//print_r($Cols);
+			//print_r($columns);
 			
 			
 			$LinesMatch = array();
 			foreach($this->Lines as $i => $v) {
 				$CurrentLine = array();
 				for ($rr=0; $rr<5; $rr++) {
-					$CurrentLine[] = $Cols[$v[$rr]->x][$v[$rr]->y];
+					$CurrentLine[] = $columns[$v[$rr]->x][$v[$rr]->y];
 				}
 				
 				$r = $this->CheckLine($i, $CurrentLine);
@@ -223,7 +231,7 @@
 			}
 			
 			$StrItems = array();
-			foreach($Cols as $i => $v) {
+			foreach($columns as $i => $v) {
 				$StrItem = implode(',', $v);
 				$StrItems[] = $StrItem;
 			}

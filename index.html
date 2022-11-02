@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<title>Vape Boy Slot</title>
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="stylesheet" href="style/customizer.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="style/game.css">
 
 		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jcanvas.js"	type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.jSlots.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/all.js"	type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.jSlots.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			// TODO: Add a better function
 			window.addEventListener('fullscreenchange',fullScreenEvent);
 			window.addEventListener('webkitfullscreenchange',fullScreenEvent);
 			window.addEventListener('mozfullscreenchange',fullScreenEvent);
@@ -41,112 +39,13 @@
 			}
 		</script>
 	</head>
-	<body style="padding: 3rem;">
-	<div id="what" style="color: white;"></div>
-		<div class="dvLoading">
-			Wird geladen...
-			<div class="objItem1 dvSizeNull"></div>
-			<div class="objItem2 dvSizeNull"></div>
-			<div class="objItem3 dvSizeNull"></div>
-			<div class="objItem4 dvSizeNull"></div>
-			<div class="objItem5 dvSizeNull"></div>
-			<div class="objItem6 dvSizeNull"></div>
-			<div class="objItem7 dvSizeNull"></div>
-			<div class="objItem8 dvSizeNull"></div>
-			<div class="objItem9 dvSizeNull"></div>
-			<div class="objItem10 dvSizeNull"></div>
-			<div class="objItem11 dvSizeNull"></div>
-			<div class="objItem12 dvSizeNull"></div>
-		</div>
-		
-		<div class="dvHelp">
-			<h2>Hilfe</h2><br/>
-			<pre>
-	Linien
-	===================================================
-	
-	Q = 1 Linie
-	W = 5 Linien
-	E = 9 Linien
-	R = 15 Linien
-	T = 20 Linien
-	
-	Befehle
-	===================================================
-	
-	G		--> Wettmultiplikator erhöhen
-	F		--> Wettmultiplikator verkleinern
-	
-	S		--> Automatisches Drehen aktivieren
-	
-	F11		--> In den Vollbildmodus wechseln
-	[ENTER]		--> Drehen
-			</pre>
-		</div>
-		
-		<!-- Bonus Cauldron -->
-		<div class="bonusCauldron" id="bonusCauldron">
-			<div class="dvCauldronTop">
-				<img src="imgs_old/witchFace.gif"></br>
-				
-				<div class="dvCauldronLine" id="CauldronLine">
-					<div class="objLineCauldron"></div>
-					<div class="objLineCauldron"></div>
-					<div class="objLineCauldron"></div>
-					<div class="objLineCauldron"></div>
-					<div class="objLineCauldron"></div>
-				</div>
-			</div>
-			
-			<div class="dvCauldronData">
-				<div style="width: 80%; height: 100%; margin: 0 auto; ">
-					<table>
-						<tr>
-							<td>Bonus</td><td><input type="text" class="inpCauldron"></td>
-						</tr>
-						<tr>
-							<td>Credits</td><td><input type="text" class="inpCauldron"></td>
-						</tr>
-						<tr>
-							<td>Pr&ecirc;mio</td><td><input type="text" class="inpCauldron"></td>
-						</tr>
-					</table>
-				</div>				
-			</div>
-		</div> <!-- -->
-		
-		<img class="source-image" src="images/background/background.png" />
-		<div class="dvTop">
-			<div class="dvMsg" id="dvMsg"><b>Achtung: </b>Sie befinden sich nicht im Vollbildmodus. Drücken Sie zum Aktivieren <b>F11</b> oder klicken Sie <a href="#" style="color: white" onclick="DoFullScreen();">hier</a>!</div>
-			<table class="tbInfo">
-				<tr>
-					<td style="width: 130px;">Credits <!-- <img src="imgs/credits.png" style="width: 100%" alt=""> --></td>
-					<td style="width: 200px; min-width: 200px;"><div id="betCredits" class="dvBox">&euro; 1000,00</div></td>
-					<td></td>
-					<td style="text-align: right; width: 100px;">
-						Gewinn
-						<!-- <img src="imgs/amount_won.png"  style="width: 100%" alt=""> -->
-					</td>
-					<td style="width: 200px; min-width: 200px;"><div id="betAward" class="dvBox">&euro; 0,00</div></td>
-					
-					<td></td>
-					<td style="position: relative; width: 115px;">
-						<img src="imgs/topcat.png" style="float: right; width: 100%;" alt="">
-						<div id="betBase" class="dvBetBase">1</div>
-					</td>
-					<td style="text-align: right; width: 100px;">
-						Einsatz
-						<!-- <img src="imgs/betV.png"  style="width: 100%"> -->
-					</td>
-					<td style="text-align: right; width: 200px;  min-width: 200px;"><div id="betValue" class="dvBox">&euro; 2,00</div></td>
-				</tr>
-				<tr>
-					<td colspan="9" style="text-align: center; font-size: 10px;" id="playAuto">Automatisches Drehen</td>
-				</tr> 
-			</table>
-		</div>
-		<div class="dvGame">
-			<div class="dvCenter">
+	<body>
+	<div class="container show l23 loaded">
+		<div class="headlineContainer" style="background-image: url('./images/background/bg_top.png');"></div>
+
+		<div class="gameContainer" style="background-image: url('./images/background/bg_middle.png');">
+			<div class="dvGame">
+				<div class="dvCenter">
 					<div class="dvCol">
 						<ul class="ulSlot">
 							<li class="objItem11"></li>
@@ -154,81 +53,133 @@
 							<li class="objItem7"></li>
 						</ul>
 					</div>
+				</div>
 			</div>
-		</div>
-		<div class="dvFoot">
-			<!--
-			<div style="float: left;">
-				<img src="imgs/all_wins.png"><div	class="dvBox" style="width: 240px;">&euro; 1.239,00</div>
-			</div>
-			-->
-			<button class="dvBtnPlay" id="playFancy"><b>Drehen</b></button>
 		</div>
 
-	<!-- START CUSTOMIZER -->
-	<div class="pct-customizer">
-		<div class="pct-c-btn">
-			<button class="btn btn-light-danger" id="pct-toggler">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-			</button>
-		</div>
-		<div class="pct-c-content ">
-			<div class="pct-header bg-primary">
-				<h5 class="mb-0 text-white f-w-500">Customizer</h5>
-			</div>
-			<div class="pct-body">
-				<h6 class="mt-1">Settings</h6>
-				<hr class="my-2">
-				<div class="form-check form-switch">
-					<input type="checkbox" class="form-check-input" id="custom-music">
-					<label class="form-check-label f-w-600 pl-1" for="custom-music">Musik</label>
+			<div class="mainControlBox">
+				<div class="fullscreenWorkaround"></div>
+				<div class="mainControlBoxBG">
+					<div class="console webConsole de">
+
+						<div class="mainBox">
+							<div>
+								<div class="fl controlButton controlButton_paytable"></div>
+								<div class="fl userInfoContainer orangeButtonsActWinContainer">
+									<div class="orangeButtonsBox">
+										<div class="fl controlButton small controlButtonOrange controlButton_lines justShow">
+											<div class="clickArea plus controlButton_linesplus" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linesminus" style="visibility: visible;"></div>
+											<div class="twolined infoArea">
+												<div class="infoValue value_lines"><span class="value">10</span></div>
+												<div class="infoLabel">LINIEN</div>
+											</div>
+										</div>
+										<div class="fr controlButton small controlButtonOrange controlButton_linebet">
+											<div class="clickArea plus controlButton_linebetplus" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linebetminus" style="visibility: visible;"></div>
+											<div class="twolined infoArea">
+												<div class="infoValue value_linebet length_4"><span class="value" id="betValue">8.000</span></div>
+												<div class="infoLabel">EINSATZ</div>
+											</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="fl userInfoContainer userInfo">
+									<div class="row1">
+										<div class="userInfoBox">
+											<div class="infoText info_none hidden"></div>
+											<div class="infoText info_choose scaledOnce">Wähle deinen EINSATZ</div>
+											<div class="infoText info_pleasePressSpin hidden">Bitte START drücken</div>
+											<div class="infoText info_win hidden">GEWINN <span class="value"></span></div>
+											<div class="infoText info_winFreegames hidden">GEWINN: <span class="value"></span> FREISPIELE</div>
+											<div class="infoText info_freegame hidden">FREISPIEL <span class="value"></span> von <span class="maxFreegames"></span></div>
+											<div class="infoText info_endFreegames hidden">Ende der FREISPIELE</div>
+											<div class="infoText info_notEnoughCoins hidden">Nicht genügend GUTHABEN</div>
+										</div>
+									</div>
+									<div class="row2">
+										<div class="leftBox userInfoBox value_totalbet">
+											<span class="infoLabel">GESAMT EINSATZ</span>
+											<span class="infoValue"><span class="value"><span class="currLeft"></span>TODO</span></span>
+											<span class="fontsizeFaker"></span>
+										</div>
+										<div class="rightBox userInfoBox balanceBox">
+											<div class="value_money">
+												<span class="infoLabel moneyLabel">GUTHABEN</span>
+												<span class="infoValue"><span class="value" id="betCredits"><span class="currLeft"></span>1000,00</span></span>
+												<span class="fontsizeFaker"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="actionButtons">
+								<!-- TODO: Add Loop for "pulse" Class -->
+								<div class="fr controlButton big reactsToPressSpace spinButton controlButton_spin isPulsing pulse" id="playFancy"></div>
+								<div class="fr controlButton controlButtonGreen controlButton_autospin autospinChoiceEntry" id="buttonAutoSpin">AUTO</div>
+								<div class="fr controlButton controlButtonViolet twolined controlButton_maxbet">MAX<br>BET</div>
+								<div class="clear"></div>
+							</div>
+
+						</div>
+
+						<div class="headlineButtons">
+							<div class="fl controlButton controlButton_fullscreen" onclick="DoFullScreen();"></div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="versionDisplay">
+							<span class="slotName">VAPE BOY</span>
+							<span class="slotVersion"> 1.0.0</span>
+							<!--
+							<span class="slotSessionStats">
+								Slot Session Statistik: Gewinne <span class="value stats_win"></span> / Einsätze <span class="value stats_bet"></span> / Ergebnis <span class="value stats_profit"></span>
+							</span>
+							-->
+						</div>
 				</div>
-				<h6 class="mt-4">Game Settings</h6>
-				<hr class="my-2">
-				<div class="form-check form-switch mt-2">
-					<input type="checkbox" class="form-check-input" id="custom-autoplay">
-					<label class="form-check-label f-w-600 pl-1" for="custom-autoplay">Autoplay</label>
+			</div>
+
+			<div class="hidden popupContainer">
+				<div class="errorContainer" style="margin-left: 0px; margin-top: 0px; opacity: 1;">
+					<div class="errorPopupBG"></div>
+					<div class="errorPopup preloadError">
+						<div class="retry closeButton"></div>
+						<div class="errorText">Das Spiel konnte nicht korrekt<br>geladen werden.</div>
+						<div class="retry reconnectButton">
+							<div class="buttonText NewLoad">NEU LADEN</div>
+						</div>
+					</div>
 				</div>
 			</div>
+
+			<div class="hidden" id="errorPopupCode">
+				<div class="errorContainer">
+					<div class="errorPopupBG"></div>
+					<div class="errorPopup">
+						<div class="retry closeButton"></div>
+						<div class="errorText">
+							Die Verbindung wurde unterbrochen. <br>Bitte nochmal versuchen.
+						</div>
+						<div class="retry reconnectButton">
+							<div class="buttonText Reconnect">
+								VERBINDEN
+							</div>
+						</div>
+					</div>
+				</div>
 		</div>
+			</div>
 	</div>
-	<script>
-		const pctoggle = document.querySelector("#pct-toggler");
-		if (pctoggle) {
-			pctoggle.addEventListener('click', function () {
-				if (!document.querySelector(".pct-customizer").classList.contains('active')) {
-					document.querySelector(".pct-customizer").classList.add("active");
-				} else {
-					document.querySelector(".pct-customizer").classList.remove("active");
-				}
-			});
-		}
-
-		const custom_music = document.querySelector("#custom-music");
-		custom_music.addEventListener('click', function () {
-			if (custom_music.checked) {
-				// TODO
-			} else {
-				// TODO
-			}
-		});
-
-		const custom_autoplay = document.querySelector("#custom-autoplay");
-		custom_autoplay.addEventListener('click', function () {
-			if (custom_autoplay.checked) {
-				// TODO
-			} else {
-				// TODO
-			}
-		});
-	</script>
-	<!-- END CUSTOMIZER -->
-		
 		<script type="text/javascript" charset="utf-8">
 			$('.ulSlot').jSlots({
 				number : 5,
 				winnerNumber : 7,
 				spinner : '#playFancy',
+				autoplay: '#buttonAutoSpin',
 				easing : 'linear',
 				time : 2000,
 				loops : 16,
@@ -237,18 +188,18 @@
 				},
 				onWin : function(winCount, winners) {
 					// only fires if you win
-					
+
 					$.each(winners, function() {
 						this.addClass('winner');
 					});
 
-					// react to the # of winning slots                 
+					// react to the # of winning slots
 					if ( winCount === 1 ) {
 						//alert('You got ' + winCount + ' 7!!!');
 					} else if ( winCount > 1 ) {
 						//alert('You got ' + winCount + ' 7?s!!!');
 					}
-					
+
 				}
 			});
 		</script>
