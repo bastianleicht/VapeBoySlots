@@ -168,6 +168,21 @@
 
 				}
 			});
+
+			function log(text, arguments) {
+				if(!arguments) arguments = ' ';
+				let d = new Date();
+				let hours = d.getHours();
+				if (hours < 10)
+					hours = "0" + hours;
+				let minutes = d.getMinutes();
+				if (minutes < 10)
+					minutes = "0" + minutes;
+				let seconds = d.getSeconds();
+				if (seconds < 10)
+					seconds = "0" + seconds;
+				console.log("%c[VapeBoy] [" + hours + ":" + minutes + ":" + seconds + "] > %c" + text + arguments, 'color: rebeccapurple;', 'color: unset;')
+			}
 		</script>
 	</body>
 </html>

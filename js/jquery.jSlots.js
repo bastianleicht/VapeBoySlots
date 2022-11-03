@@ -383,11 +383,11 @@ function sleep(milliseconds) {
 				base.playAuto	= !base.playAuto;
 				let htmlElement = base.options.autoplay.replace('#', '');
 				if(base.playAuto === true) {
-					console.log('Enabled AutoPlay')
+					log('Enabled AutoPlay')
 					document.getElementById(htmlElement).classList.add('twolined');
 					document.getElementById(htmlElement).innerHTML = '<div class="twolined"><div class="infoValueUnlimited">AUTO OFF</div></div>';
 				} else {
-					console.log('Disabled AutoPlay')
+					log('Disabled AutoPlay')
 					document.getElementById(htmlElement).classList.remove('twolined');
 					document.getElementById(htmlElement).innerHTML = 'AUTO';
 				}
@@ -397,7 +397,6 @@ function sleep(milliseconds) {
 			const values = [10, 20, 30, 50, 100, 150, 200]
 
 			$(base.options.betIncrease).bind('click', function(event) {
-				console.log('Increased Bet')
 				let new_val = values.find(function (element) {
 					return element > base.betBase;
 				});
@@ -407,6 +406,7 @@ function sleep(milliseconds) {
 				// Disable Increase
 				if(new_val >= 200) $(base.options.betIncrease).addClass('hidden');
 
+				log('Increased Bet from "' + base.betBase + '" to "' + new_val + '"');
 				base.betBase = new_val;
 				base.showLines	= true;
 				base.drawCanvas();
@@ -426,6 +426,7 @@ function sleep(milliseconds) {
 				// Disable Decrease
 				if(new_val <= 10) $(base.options.betDecrease).addClass('hidden');
 
+				log('Decreased Bet from "' + base.betBase + '" to "' + new_val + '"');
 				base.betBase = new_val;
 				base.showLines	= true;
 				base.drawCanvas();
