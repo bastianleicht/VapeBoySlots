@@ -10,11 +10,6 @@
 		<script src="js/all.js"	type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.jSlots.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-			// TODO: Add a better function
-			window.addEventListener('fullscreenchange',fullScreenEvent);
-			window.addEventListener('webkitfullscreenchange',fullScreenEvent);
-			window.addEventListener('mozfullscreenchange',fullScreenEvent);
-			
 			function DoFullScreen() {
 				let isInFullScreen = (document.fullScreenElement && true) ||    // alternative standard method
 						(document.mozFullScreen || document.webkitIsFullScreen);
@@ -31,11 +26,9 @@
 					else if (docElm.webkitRequestFullScreen) {
 						docElm.webkitRequestFullScreen();
 					}
+				} else {
+					document.exitFullscreen();
 				}
-			}
-			
-			function fullScreenEvent() {
-				//alert(document.documentElement.clientWidth + '; '+ screen.width);
 			}
 		</script>
 	</head>
