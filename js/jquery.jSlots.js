@@ -688,10 +688,11 @@ function sleep(milliseconds) {
                 $.each(base.allSlots, function(index, val) {
                     finalNumbers[index] = val.number;
                 });
+				/**/
 
                 if ( $.isFunction( base.options.onEnd ) ) {
-                    base.options.onEnd(finalNumbers);
-                }/**/
+                    base.options.onEnd();
+                }
 
 				if (base.matchLines !== '') {
 					soundEl['wheel'].pause();

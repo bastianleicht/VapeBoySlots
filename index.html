@@ -155,6 +155,9 @@
 					$('.dvSlot').removeClass('winner');
 					$('#playFancy').removeClass('isPulsing pulse');
 				},
+				onEnd : function () {
+					$('#playFancy').addClass('isPulsing');
+				},
 				onWin : function(winCount, winners) {
 					$('#playFancy').addClass('isPulsing');
 					// only fires if you win
