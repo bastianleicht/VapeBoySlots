@@ -90,9 +90,10 @@ function sleep(milliseconds) {
         base.allSlots	= [];
 		
 		base._objs		= [];
-		base.betLines	= 20;
-		// Wert in Cent 10ct
-		base.betBase	= 100;
+		// Default Lines
+		base.betLines	= 10;
+		// Wert in Cent 50ct
+		base.betBase	= 50;
 		
 		//Werte in Cent
 		base.betValue	= 1;
