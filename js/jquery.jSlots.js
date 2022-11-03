@@ -394,12 +394,15 @@ function sleep(milliseconds) {
 			});
 
 			// NOTE: Bet Values: 0.10, 0.20, 0.30, 0.50, 1.00, 1.50, 2.00
-			const values = [10, 20, 30, 50, 100, 150, 200]
+			const betValues = [10, 20, 30, 50, 100, 150, 200]
 
 			$(base.options.betIncrease).bind('click', function(event) {
-				let new_val = values.find(function (element) {
-					return element > base.betBase;
-				});
+				let new_val
+				for (let i = 0; i < betValues.length; i++) {
+					if(betValues[i] === base.betBase) {
+						new_val = betValues[i+1];
+					}
+				}
 
 				// Enable Decrease
 				if(base.betBase <= 10) $(base.options.betDecrease).removeClass('hidden');
@@ -414,11 +417,11 @@ function sleep(milliseconds) {
 
 			$(base.options.betDecrease).bind('click', function(event) {
 				let new_val, last_val
-				for (let i = 0; i < values.length; i++) {
-					if(values[i] === base.betBase) {
+				for (let i = 0; i < betValues.length; i++) {
+					if(betValues[i] === base.betBase) {
 						new_val = last_val;
 					}
-					last_val = values[i];
+					last_val = betValues[i];
 				}
 
 				// Enable Increase
