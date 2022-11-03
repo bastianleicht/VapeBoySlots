@@ -91,7 +91,8 @@ function sleep(milliseconds) {
 		
 		base._objs		= [];
 		base.betLines	= 20;
-		base.betBase	= 10;
+		// Wert in Cent 10ct
+		base.betBase	= 100;
 		
 		//Werte in Cent
 		base.betValue	= 1;
