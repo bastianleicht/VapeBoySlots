@@ -107,7 +107,6 @@ function sleep(milliseconds) {
 		
 		base.awardValue	= '';
 		base.matchLines;
-		// TODO: Add function to enable this from the GUI
 		base.playAuto	= false;
 		
 		base.curBonus	= '';
@@ -125,7 +124,7 @@ function sleep(milliseconds) {
 		},{strokeStyle: '#daa520',	strokeWidth: 1,
 						x1:  -2,	y1:  -3,
 						x2:  100,	y2:  175,
-						x3:  200,	y3:  000,
+						x3:  200,	y3:  0,
 		},{strokeStyle: '#008033',	strokeWidth: 1,
 						x1:  -2,	y1:  203,
 						x2:  100,	y2:  25,
@@ -226,9 +225,9 @@ function sleep(milliseconds) {
 			base.pushObj(base._objs, 'objItem2',		1);
 			
 			/* BEGIN */
-            var $ul		= base.$el;
-            var $li		= $ul.find('li').first();
-			var $dvCol	= $ul.parent();
+            let $ul		= base.$el;
+            let $li		= $ul.find('li').first();
+			let $dvCol	= $ul.parent();
 			
 			base.$liHeight	= $li.outerHeight();
             base.$liWidth	= $li.outerWidth();
@@ -257,9 +256,9 @@ function sleep(milliseconds) {
 		base.drawCanvas = function(){
 			let addCanvas = 120;
 			$('canvas').remove();
-			
-			$center = $('.dvCenter');
-			$canvas = $('<canvas width="'+($center.width()+addCanvas)+'" height="'+($center.height()+addCanvas)+'" class="dvCanvas" id="dvCanvas"></div>').appendTo($center);
+
+			let $center = $('.dvCenter');
+			let $canvas = $('<canvas width="' + ($center.width() + addCanvas) + '" height="' + ($center.height() + addCanvas) + '" class="dvCanvas" id="dvCanvas"></div>').appendTo($center);
 			
 			//$canvas.clearCanvas();
 			$canvas.
@@ -270,7 +269,8 @@ function sleep(milliseconds) {
 			});
 			
 			base.betValue = base.betBase*base.betLines;
-			
+
+			// Set frontend Values
 			$('#betBase').html(float2Coins(base.betBase/100, ''));
 			$('#betValue').html(float2Coins((base.betValue/100), ''));
 			$('#betCredits').html(float2Coins((base.betCredits/100), ''));
@@ -379,6 +379,7 @@ function sleep(milliseconds) {
                 }
             });
 
+			// AutoPlay Event
 			$(base.options.autoplay).bind(base.options.autoplayEvent, function(event) {
 				base.playAuto	= !base.playAuto;
 				let htmlElement = base.options.autoplay.replace('#', '');
@@ -535,16 +536,16 @@ function sleep(milliseconds) {
             // do one rotation
             spinEm : function() {
 
-                var that = this;
+                let that = this;
 				
 				if (that.loopCount === 0) {
-					for (i=4; i<=6; i++) {
+					for (let i=4; i<=6; i++) {
 						that.$el.find('li:nth-child('+(i)+')').removeClass().addClass(that.$el.find('li:nth-child('+(i-3)+')').attr('class'));
 						//alert(i);
 					}
 				} /**/
 
-				for (i=1; i<=3; i++) {
+				for (let i=1; i<=3; i++) {
 					that.$el.find('li:nth-child('+(i+3)+')').removeClass().addClass(that.$el.find('li:nth-child('+i+')').attr('class'));
 				}/**/
 				
@@ -579,25 +580,25 @@ function sleep(milliseconds) {
             // final rotation
             finish : function() {
 
-                var that = this;
+                let that = this;
 				
-				for (i=1; i<=3; i++) {
+				for (let i=1; i<=3; i++) {
 					that.$el.find('li:nth-child('+(i+3)+')').removeClass().addClass(that.$el.find('li:nth-child('+i+')').attr('class'));
 				}/**/
 				
-				i = 2;
+				let i = 2;
 				$(that.$el.find('li:nth-child(-n+3)').get().reverse()).each(function (){
 					//$(this).removeClass().addClass(base.randomObj(base._objs));
 					$(this).removeClass().addClass(that.number[i]);
 					i--;
 				});/**/
 				
-                var endNum = 1;
+                let endNum = 1;
 				//var endNum = base.randomRange( 1, base.liCount );
 
-                var finalPos = - ( (base.$liHeight * endNum) - base.$liHeight );
+                let finalPos = - ( (base.$liHeight * endNum) - base.$liHeight );
                 //var finalSpeed = ( (this.spinSpeed * this.vStop) * (base.liCount) ) / endNum;
-				var finalSpeed = that.spinSpeed;
+				let finalSpeed = that.spinSpeed;
 
                 that.$el
                     .css( 'top', -base.listHeight )
