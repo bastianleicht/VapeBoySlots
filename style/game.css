@@ -496,7 +496,6 @@ ul {
 NOTE: START NEW CSS
  */
 
-@charset "utf-8";
 * {
     -webkit-tap-highlight-color: transparent
 }
@@ -509,23 +508,6 @@ NOTE: START NEW CSS
     user-select: none
 }
 
-/* TODO: Check if needed!*/
-.errorPopup .closeButton {
-    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-error-close.png)
-}
-
-.errorPopup .reconnectButton {
-    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect.png)
-}
-
-.errorPopup .reconnectButton:hover {
-    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect-mo.png)
-}
-
-.errorPopup .reconnectButton:active {
-    background-image: url(https://whow-gamomat.akamaized.net/v1.168.3/gui/picts/game/1280/console/web/button-reconnect-press.png)
-}
-
 .container {
     position: relative;
     width: 1280px;
@@ -533,16 +515,8 @@ NOTE: START NEW CSS
     overflow: hidden
 }
 
-.container.fullscreen {
-    overflow: visible !important
-}
-
 .container.l23 {
     height: 853px
-}
-
-.container.l169 {
-    height: 720px
 }
 
 .headlineContainer {
@@ -567,225 +541,6 @@ NOTE: START NEW CSS
     z-index: 3
 }
 
-.popupContainer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 256
-}
-
-#maxiplay_container {
-    position: absolute;
-    top: 14px;
-    left: 107px;
-    z-index: 42;
-    overflow: hidden;
-    width: 1066px;
-    height: 576px
-}
-
-.errorContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1
-}
-
-.errorPopupBG {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1280px;
-    background-color: #000;
-    opacity: .4
-}
-
-.errorContainer + .errorContainer .errorPopupBG {
-    background-color: transparent
-}
-
-.container.l23 .popupContainer .errorPopupBG {
-    height: 853px
-}
-
-.container.l169 .popupContainer .errorPopupBG {
-    height: 720px
-}
-
-.errorPopup {
-    position: relative;
-    width: 900px;
-    height: 452px;
-    left: 186px;
-    color: #fff;
-    text-align: center;
-    border: 4px solid #494949;
-    font-family: 'Roboto Condensed', Arial;
-    background-color: #000
-}
-
-.container.l23 .errorPopup {
-    top: 206px
-}
-
-.container.l169 .errorPopup {
-    top: 72px
-}
-
-.errorPopup .closeButton {
-    position: absolute;
-    right: -2px;
-    top: 2px;
-    width: 74px;
-    height: 74px;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer
-}
-
-.errorPopup .reconnectButton {
-    position: relative;
-    margin: 75px auto 0;
-    width: 340px;
-    height: 94px;
-    cursor: pointer
-}
-
-.errorPopup.preloadError .reconnectButton {
-    margin-top: 40px
-}
-
-html[lang=en] .errorPopup.preloadError .reconnectButton {
-    margin-top: 72px
-}
-
-html[lang=jp] .errorPopup .reconnectButton {
-    margin-top: 60px
-}
-
-.errorPopup .reconnectButton .buttonText {
-    width: 337px;
-    height: 77px;
-    font-size: 44px;
-    padding-top: 20px;
-    font-weight: 700;
-    text-align: center
-}
-
-html[lang=bg] .errorPopup .reconnectButton .buttonText.NewLoad {
-    font-size: 36px;
-    padding-top: 26px
-}
-
-html[lang=bg] .errorPopup .reconnectButton .buttonText.Reconnect {
-    font-size: 26px;
-    padding-top: 32px
-}
-
-html[lang=el] .errorPopup .reconnectButton .buttonText {
-    font-size: 36px;
-    padding-top: 26px
-}
-
-html[lang=es] .errorPopup .reconnectButton .buttonText {
-    font-size: 40px;
-    padding-top: 22px
-}
-
-html[lang=fi] .errorPopup .reconnectButton .buttonText {
-    font-size: 36px;
-    padding-top: 26px
-}
-
-html[lang=hr] .errorPopup .reconnectButton .buttonText {
-    font-size: 42px;
-    padding-top: 22px
-}
-
-html[lang=nl] .errorPopup .reconnectButton .buttonText {
-    font-size: 34px;
-    padding-top: 26px
-}
-
-html[lang=no] .errorPopup .reconnectButton .buttonText {
-    font-size: 38px;
-    padding-top: 22px
-}
-
-html[lang=pl] .errorPopup .reconnectButton .buttonText {
-    font-size: 36px;
-    padding-top: 26px
-}
-
-html[lang=ru] .errorPopup .reconnectButton .buttonText {
-    font-size: 36px;
-    padding-top: 26px
-}
-
-html[lang=sr] .errorPopup .reconnectButton .buttonText {
-    font-size: 33px;
-    padding-top: 27px
-}
-
-html[lang=zh] .errorPopup .reconnectButton .buttonText {
-    padding-left: 20px
-}
-
-.errorPopup .errorText {
-    position: relative;
-    margin: 82px auto 0;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 1.1
-}
-
-html[lang=dk] .errorPopup.preloadError .errorText {
-    padding-top: 38px
-}
-
-html[lang=en] .errorPopup.preloadError .errorText {
-    margin-top: 108px
-}
-
-html[lang=et] .errorPopup.preloadError .errorText {
-    padding-top: 38px
-}
-
-html[lang=fi] .errorPopup.preloadError .errorText {
-    padding-top: 38px
-}
-
-html[lang=jp] .errorPopup.preloadError .errorText {
-    font-size: 45px;
-    padding-top: 38px
-}
-
-html[lang=no] .errorPopup.preloadError .errorText {
-    padding-top: 38px
-}
-
-html[lang=ro] .errorPopup .errorText {
-    font-size: 46px
-}
-
-html[lang=se] .errorPopup.preloadError .errorText {
-    padding-top: 38px
-}
-
-html[lang=vi] .errorPopup.preloadError .errorText {
-    font-size: 48px
-}
-
-#freegame_container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    width: 1280px;
-    height: 604px;
-    z-index: 15
-}
-
 .loaded .gameContainer {
     background-image: url('../images/background/bg_middle.png')
 }
@@ -795,55 +550,55 @@ html[lang=vi] .errorPopup.preloadError .errorText {
 }
 
 .loaded .mainControlBoxBG {
-    background-image: url(../new_ui/bg_bottom.jpg)
+    background-image: url(../images/background/bg_bottom.jpg)
 }
 
 .mainControlBox .webConsole {
-    background-image: url(../new_ui/console_web_bg.png)
+    background-image: url(../images/controls/console_web_bg.png)
 }
 
 .webConsole .userInfoContainer.userInfo {
-    background-image: url(../new_ui/infobox-standard.png)
+    background-image: url(../images/controls/infobox-standard.png)
 }
 
 .webConsole .controlButton_paytable {
-    background-image: url(../new_ui/button-paytable.png)
+    background-image: url(../images/controls/button-paytable.png)
 }
 
 .webConsole .controlButton_paytable:hover {
-    background-image: url(../new_ui/button-paytable-mo.png)
+    background-image: url(../images/controls/button-paytable-mo.png)
 }
 
 .webConsole .controlButton_paytable:active {
-    background-image: url(../new_ui/button-paytable-press.png)
+    background-image: url(../images/controls/button-paytable-press.png)
 }
 
 .webConsole .controlButtonGreen {
-    background-image: url(../new_ui/button-green.png)
+    background-image: url(../images/controls/button-green.png)
 }
 
 .webConsole .controlButtonGreen:hover {
-    background-image: url(../new_ui/button-green-mo.png)
+    background-image: url(../images/controls/button-green-mo.png)
 }
 
 .webConsole .controlButtonGreen:active {
-    background-image: url(../new_ui/button-green-press.png)
+    background-image: url(../images/controls/button-green-press.png)
 }
 
 .webConsole .controlButtonGreen.isPulsing.pulse {
-    background-image: url(../new_ui/button-green-pulse.png)
+    background-image: url(../images/controls/button-green-pulse.png)
 }
 
 .webConsole .controlButtonGreen.isPulsing.pulse:hover {
-    background-image: url(../new_ui/button-green-mo.png)
+    background-image: url(../images/controls/button-green-mo.png)
 }
 
 .webConsole .controlButtonGreen.isPulsing.pulse:active {
-    background-image: url(../new_ui/button-green-press.png)
+    background-image: url(../images/controls/button-green-press.png)
 }
 
 .webConsole .spinButton {
-    background-image: url(../new_ui/buttons-spin.png)
+    background-image: url(../images/controls/buttons-spin.png)
 }
 
 .webConsole .spinButton {
@@ -871,59 +626,51 @@ html[lang=vi] .errorPopup.preloadError .errorText {
 }
 
 .webConsole .controlButtonOrange {
-    background-image: url(../new_ui/button-orange.png)
+    background-image: url(../images/controls/button-orange.png)
 }
 
 .webConsole .controlButtonOrange .clickArea.plus {
-    background-image: url(../new_ui/button-orange-plus.png)
+    background-image: url(../images/controls/button-orange-plus.png)
 }
 
 .webConsole .controlButtonOrange .clickArea.plus:active, .webConsole .controlButtonOrange .clickArea.plus:hover {
-    background-image: url(../new_ui/button-orange-plus-mo.png)
+    background-image: url(../images/controls/button-orange-plus-mo.png)
 }
 
 .webConsole .controlButtonOrange .clickArea.minus {
-    background-image: url(../new_ui/button-orange-minus.png)
+    background-image: url(../images/controls/button-orange-minus.png)
 }
 
 .webConsole .controlButtonOrange .clickArea.minus:active, .webConsole .controlButtonOrange .clickArea.minus:hover {
-    background-image: url(../new_ui/button-orange-minus-mo.png)
+    background-image: url(../images/controls/button-orange-minus-mo.png)
 }
 
 .webConsole .controlButtonViolet {
-    background-image: url(../new_ui/button-violet.png)
+    background-image: url(../images/controls/button-violet.png)
 }
 
 .webConsole .controlButtonViolet:hover {
-    background-image: url(../new_ui/button-violet-mo.png)
+    background-image: url(../images/controls/button-violet-mo.png)
 }
 
 .webConsole .controlButtonViolet:active {
-    background-image: url(../new_ui/button-violet-press.png)
+    background-image: url(../images/controls/button-violet-press.png)
 }
 
 .webConsole .controlButtonViolet.isPulsing.pulse {
-    background-image: url(../new_ui/button-violet-pulse.png)
+    background-image: url(../images/controls/button-violet-pulse.png)
 }
 
 .webConsole .controlButtonViolet.isPulsing.pulse:hover {
-    background-image: url(../new_ui/button-violet-mo.png)
+    background-image: url(../images/controls/button-violet-mo.png)
 }
 
 .webConsole .controlButtonViolet.isPulsing.pulse:active {
-    background-image: url(../new_ui/button-violet-press.png)
-}
-
-.webConsole .controlButton_settings {
-    background-image: url(../new_ui/buttons-settings.png)
-}
-
-.webConsole .controlButton_settings:active, .webConsole .controlButton_settings:hover {
-    background-position: bottom
+    background-image: url(../images/controls/button-violet-press.png)
 }
 
 .webConsole .controlButton_fullscreen {
-    background-image: url(../new_ui/buttons-fullscreen.png)
+    background-image: url(../images/controls/buttons-fullscreen.png)
 }
 
 .webConsole .controlButton_fullscreen:active, .webConsole .controlButton_fullscreen:hover {
@@ -948,33 +695,8 @@ html[lang=vi] .errorPopup.preloadError .errorText {
     height: 110px
 }
 
-.console .clockAndGameRoundIdDisplay, .console .versionDisplay {
-    position: absolute;
-    top: -604px;
-    padding: 0 8px;
-    background-color: rgba(0, 0, 0, .7);
-    font-size: 16px;
-    color: #fff
-}
-
-.console .clockAndGameRoundIdDisplay {
-    font-size: 20px
-}
-
-.l23 .console .clockAndGameRoundIdDisplay, .l23 .console .versionDisplay {
-    top: -737px
-}
-
-.l169 .console .clockAndGameRoundIdDisplay, .l169 .console .versionDisplay {
-    top: -604px
-}
-
 .webConsole .versionDisplay {
     left: -50px
-}
-
-.webConsole .clockAndGameRoundIdDisplay {
-    right: -50px
 }
 
 .console .versionDisplay .slotSessionStats {
@@ -983,10 +705,6 @@ html[lang=vi] .errorPopup.preloadError .errorText {
 
 .console .versionDisplay .slotSessionStats .currLeft {
     padding-right: 2px
-}
-
-.console .clockAndGameRoundIdDisplay span + span {
-    padding-left: 8px
 }
 
 .console .controlButton {
@@ -1065,14 +783,6 @@ html[lang=vi] .errorPopup.preloadError .errorText {
     line-height: 32px
 }
 
-.webConsole .controlButton_stopautospin .infoValue {
-    font-size: 34px
-}
-
-.webConsole .controlButton_stopautospin .infoLabel {
-    font-size: 20px
-}
-
 .webConsole .userInfoContainer {
     height: 107px;
     margin-left: 2px
@@ -1092,12 +802,6 @@ html[lang=vi] .errorPopup.preloadError .errorText {
 .webConsole .userInfoContainer.userInfo .row1 .userInfoBox {
     width: 570px;
     left: 14px
-}
-
-.webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_jackpotBonus, .webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_jackpotWin, .webConsole .userInfoContainer.userInfo .row1 .userInfoBox div.info_win {
-    position: relative;
-    top: -10px;
-    font-size: 50px
 }
 
 .webConsole .userInfoContainer .row2, .webConsole .userInfoContainer .row2 .userInfoBox {
@@ -1151,31 +855,6 @@ html[lang=vi] .errorPopup.preloadError .errorText {
     font-size: 28px
 }
 
-.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_5 {
-    font-size: 24px;
-    height: 31px
-}
-
-.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_6 {
-    font-size: 19px;
-    height: 27px
-}
-
-.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_7 {
-    font-size: 16px;
-    height: 26px
-}
-
-.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_8 {
-    font-size: 14px;
-    height: 25px
-}
-
-.webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoValue.length_9 {
-    font-size: 13px;
-    height: 24px
-}
-
 .webConsole .userInfoContainer.orangeButtonsActWinContainer .orangeButtonsBox .controlButtonOrange .infoArea .infoLabel {
     position: absolute;
     left: 0;
@@ -1207,10 +886,6 @@ html[lang=vi] .errorPopup.preloadError .errorText {
 
 .webConsole .userInfoContainer.userInfo .row2 .userInfoBox.value_money .infoLabel.moneyLabel {
     display: inline
-}
-
-.webConsole .userInfoContainer.userInfo .row2 .userInfoBox.value_money .infoLabel.totalmoneyLabel {
-    display: none
 }
 
 .webConsole .userInfoContainer.userInfo .row2 .userInfoBox .infoValue {
@@ -1264,52 +939,10 @@ html[lang=vi] .errorPopup.preloadError .errorText {
     font-size: 26px
 }
 
-.webConsole.bg .controlButton_stopautospin .infoLabel {
-    font-size: 15px
-}
-
 .webConsole.et .controlButton_autospin {
     font-size: 16px;
     padding-top: 42px;
     height: 63px
-}
-
-.webConsole.et .controlButton_stopautospin {
-    font-size: 16px
-}
-
-.webConsole.et .controlButton_stopautospin .infoLabel {
-    font-size: 14px;
-    line-height: 16px;
-    padding-top: 6px
-}
-
-.webConsole.fr .controlButton_stopautospin {
-    font-size: 15px
-}
-
-.webConsole.fr .controlButton_stopautospin .infoLabel {
-    font-size: 15px;
-    line-height: 16px;
-    padding-top: 6px
-}
-
-html {
-    height: 100%
-}
-
-body {
-    font-family: Arial, Sans-serif;
-    font-size: 12px;
-    color: #444;
-    padding: 0;
-    margin: 0;
-    height: 100%
-}
-
-div {
-    margin: 0;
-    padding: 0
 }
 
 .fl {
