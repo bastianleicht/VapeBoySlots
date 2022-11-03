@@ -550,11 +550,11 @@ NOTE: START NEW CSS
 }
 
 .loaded .mainControlBoxBG {
-    background-image: url(../images/background/bg_bottom.jpg)
+    background-image: url(../images/background/bg_bottom.png)
 }
 
 .mainControlBox .webConsole {
-    background-image: url(../images/controls/console_web_bg.png)
+    /*background-image: url(../images/background/bg_bottom.png) /**/
 }
 
 .webConsole .userInfoContainer.userInfo {
@@ -745,6 +745,7 @@ NOTE: START NEW CSS
     position: relative;
     overflow: hidden;
     color: #fff;
+    right: -62px;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -782,7 +783,7 @@ NOTE: START NEW CSS
 .webConsole .actionButtons {
     position: absolute;
     top: 0;
-    right: 4px
+    right: 107px
 }
 
 .webConsole .controlButton_paytable {
