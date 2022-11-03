@@ -251,8 +251,8 @@ ul {
     height: 33.33%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 60%;
-    /*border				: 1px solid silver; /**/
+    background-size: 75%;
+    /*border				: 1px solid silver; /* TODO: Re-Add Border*/
 }
 
 .objItem1 {
