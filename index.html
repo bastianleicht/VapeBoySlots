@@ -76,8 +76,8 @@
 											</div>
 										</div>
 										<div class="fr controlButton small controlButtonOrange controlButton_linebet">
-											<div class="clickArea plus controlButton_linebetplus" style="visibility: visible;"></div>
-											<div class="clickArea minus controlButton_linebetminus" style="visibility: visible;"></div>
+											<div class="clickArea plus controlButton_linebetplus" id="increaseBet" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linebetminus" id="decreaseBet" style="visibility: visible;"></div>
 											<div class="twolined infoArea">
 												<div class="infoValue value_linebet length_4"><span class="value" id="betBase">2,00</span></div>
 												<div class="infoLabel">EINSATZ</div>
@@ -180,6 +180,8 @@
 				winnerNumber : 7,
 				spinner : '#playFancy',
 				autoplay: '#buttonAutoSpin',
+				betIncrease: '#increaseBet',
+				betDecrease: '#decreaseBet',
 				easing : 'linear',
 				time : 2000,
 				loops : 16,

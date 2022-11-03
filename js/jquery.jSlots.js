@@ -399,6 +399,44 @@ function sleep(milliseconds) {
 					document.getElementById(htmlElement).innerHTML = 'AUTO';
 				}
 			});
+
+			// NOTE: Bet Values: 0.10, 0.20, 0.30, 0.50, 1.00, 1.50, 2.00
+			const values = [10, 20, 30, 50, 100, 150, 200]
+
+			$(base.options.betIncrease).bind('click', function(event) {
+				console.log('Increased Bet')
+				let new_val = values.find(function (element) {
+					return element > base.betBase;
+				});
+
+				// Enable Decrease
+				if(base.betBase <= 10) $(base.options.betDecrease).removeClass('hidden');
+				// Disable Increase
+				if(new_val >= 200) $(base.options.betIncrease).addClass('hidden');
+
+				base.betBase = new_val;
+				base.showLines	= true;
+				base.drawCanvas();
+			});
+
+			$(base.options.betDecrease).bind('click', function(event) {
+				let new_val, last_val
+				for (let i = 0; i < values.length; i++) {
+					if(values[i] === base.betBase) {
+						new_val = last_val;
+					}
+					last_val = values[i];
+				}
+
+				// Enable Increase
+				if(base.betBase >= 200) $(base.options.betIncrease).removeClass('hidden');
+				// Disable Decrease
+				if(new_val <= 10) $(base.options.betDecrease).addClass('hidden');
+
+				base.betBase = new_val;
+				base.showLines	= true;
+				base.drawCanvas();
+			});
         };
 		
 		$(window).on('resize', function(){
