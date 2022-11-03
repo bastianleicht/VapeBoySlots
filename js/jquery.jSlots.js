@@ -274,6 +274,7 @@ function sleep(milliseconds) {
 			$('#betBase').html(float2Coins(base.betBase/100, ''));
 			$('#betValue').html(float2Coins((base.betValue/100), ''));
 			$('#betCredits').html(float2Coins((base.betCredits/100), ''));
+			$('#betLines').html(base.betLines);
 			if (base.betAward === 0 ) {
 				$('#betAward').html('&nbsp;');
 			} else {
