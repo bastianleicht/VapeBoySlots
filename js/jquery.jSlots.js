@@ -270,7 +270,7 @@ function sleep(milliseconds) {
 			
 			base.betValue = base.betBase*base.betLines;
 			
-			$('#betBase').html('x'+base.betBase);
+			$('#betBase').html(float2Coins(base.betBase/100, ''));
 			$('#betValue').html(float2Coins((base.betValue/100), ''));
 			$('#betCredits').html(float2Coins((base.betCredits/100), ''));
 			if (base.betAward === 0 ) {
