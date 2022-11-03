@@ -346,16 +346,15 @@ function sleep(milliseconds) {
 				$canvas.drawImage({source: 'images/lineDots/b5.png',	x: -3, y: 202,	width: 4, height: 9});
 			}
 			
-			if (base.betLines >= 9) {
+			if (base.betLines >= 10) {
 				$canvas.drawImage({source: 'images/lineDots/b6.png',	x: -3, y:  25,	width: 4, height: 9});
 				$canvas.drawImage({source: 'images/lineDots/b7.png',	x: -3, y: 175,	width: 4, height: 9});
 				$canvas.drawImage({source: 'images/lineDots/b8.png',	x: -3, y:  60,	width: 4, height: 9});
 				$canvas.drawImage({source: 'images/lineDots/b9.png',	x: -3, y: 140,	width: 4, height: 9});
+				$canvas.drawImage({source: 'images/lineDots/b10.png',	x: -3, y: 130,	width: 4, height: 9});
 			}
 			
 			if (base.betLines >= 15) {
-				$canvas.drawImage({source: 'images/lineDots/b10.png',	x: -3, y: 130,	width: 4, height: 9});
-			
 				$canvas.drawImage({source: 'images/lineDots/b11.png',	x: 203, y: 155,	width: 4, height: 9});
 				$canvas.drawImage({source: 'images/lineDots/b12.png',	x: 203, y:  10,	width: 4, height: 9});
 				$canvas.drawImage({source: 'images/lineDots/b13.png',	x: 203, y: 190,	width: 4, height: 9});
@@ -456,7 +455,7 @@ function sleep(milliseconds) {
 					base.betLines	= 5;
 					break;
 				case 'e':
-					base.betLines	= 9;
+					base.betLines	= 10;
 					break;
 				case 'r':
 					base.betLines	= 15;
