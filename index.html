@@ -61,8 +61,8 @@
 								<div class="fl userInfoContainer orangeButtonsActWinContainer">
 									<div class="orangeButtonsBox">
 										<div class="fl controlButton small controlButtonOrange controlButton_lines justShow">
-											<div class="clickArea plus controlButton_linesplus" style="visibility: visible;"></div>
-											<div class="clickArea minus controlButton_linesminus" style="visibility: visible;"></div>
+											<div class="clickArea plus controlButton_linesplus" id="increaseLines" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linesminus" id="decreaseLines" style="visibility: visible;"></div>
 											<div class="twolined infoArea">
 												<div class="infoValue value_lines" id="betLines"><span class="value">10</span></div>
 												<div class="infoLabel">LINIEN</div>
@@ -146,6 +146,8 @@
 				autoplay: '#buttonAutoSpin',
 				betIncrease: '#increaseBet',
 				betDecrease: '#decreaseBet',
+				linesIncrease: '#increaseLines',
+				linesDecrease: '#decreaseLines',
 				easing : 'linear',
 				time : 2000,
 				loops : 16,

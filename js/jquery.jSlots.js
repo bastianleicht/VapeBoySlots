@@ -431,6 +431,48 @@ function sleep(milliseconds) {
 				base.showLines	= true;
 				base.drawCanvas();
 			});
+
+			// LINES
+			const lineValues = [1, 5, 10, 15, 20]
+
+			$(base.options.linesIncrease).bind('click', function(event) {
+				let new_val
+				for (let i = 0; i < lineValues.length; i++) {
+					if(lineValues[i] === base.betLines) {
+						new_val = lineValues[i+1];
+					}
+				}
+
+				// Enable Decrease
+				if(base.betLines <= 1) $(base.options.linesDecrease).removeClass('hidden');
+				// Disable Increase
+				if(new_val >= 20) $(base.options.linesIncrease).addClass('hidden');
+
+				log('Increased Lines from "' + base.betLines + '" to "' + new_val + '"');
+				base.betLines = new_val;
+				base.showLines	= true;
+				base.drawCanvas();
+			});
+
+			$(base.options.linesDecrease).bind('click', function(event) {
+				let new_val, last_val
+				for (let i = 0; i < lineValues.length; i++) {
+					if(lineValues[i] === base.betLines) {
+						new_val = last_val;
+					}
+					last_val = lineValues[i];
+				}
+
+				// Enable Increase
+				if(base.betLines >= 20) $(base.options.linesIncrease).removeClass('hidden');
+				// Disable Decrease
+				if(new_val <= 1) $(base.options.linesDecrease).addClass('hidden');
+
+				log('Decreased Lines from "' + base.betLines + '" to "' + new_val + '"');
+				base.betLines = new_val;
+				base.showLines	= true;
+				base.drawCanvas();
+			});
         };
 		
 		$(window).on('resize', function(){
@@ -443,22 +485,7 @@ function sleep(milliseconds) {
 			var ch = String.fromCharCode(cc);
 			
 			switch(ch) {
-				case 'q':
-					base.betLines	= 1;
-					break;
-				case 'w':
-					base.betLines	= 5;
-					break;
-				case 'e':
-					base.betLines	= 10;
-					break;
-				case 'r':
-					base.betLines	= 15;
-					break;
-				case 't':
-					base.betLines	= 20;
-					break;
-					// Cheat Code :D
+				// Cheat Code :D
 				case 'p':
 					base.betCredits	+= 200;
 					break;
