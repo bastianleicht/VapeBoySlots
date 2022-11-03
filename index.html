@@ -137,6 +137,8 @@
 			</div>
 	</div>
 		<script type="text/javascript" charset="utf-8">
+			let _pulseInterval;
+
 			$('.ulSlot').jSlots({
 				number : 5,
 				winnerNumber : 7,
@@ -151,8 +153,10 @@
 				loops : 16,
 				onStart : function() {
 					$('.dvSlot').removeClass('winner');
+					$('#playFancy').removeClass('isPulsing pulse');
 				},
 				onWin : function(winCount, winners) {
+					$('#playFancy').addClass('isPulsing');
 					// only fires if you win
 
 					$.each(winners, function() {
@@ -168,6 +172,31 @@
 
 				}
 			});
+
+			function pulse() {
+				//pulseElement.addClass('isPulsing');
+				_pulseInterval = setInterval(function () {
+					const pulseElement = $('#playFancy');
+					if(pulseElement.hasClass('pulse')) {
+						pulseElement.removeClass('pulse')
+					} else {
+						pulseElement.addClass('pulse')
+					}
+					//clearInterval(_interval);
+				}, 500);
+			}
+
+			_interval1 = setInterval(function () {
+				const pulseElement = $('#playFancy');
+				if(pulseElement.hasClass('isPulsing')) {
+					if(pulseElement.hasClass('pulse')) {
+						pulseElement.removeClass('pulse')
+					} else {
+						pulseElement.addClass('pulse')
+					}
+				}
+				//clearInterval(_interval);
+			}, 500);
 
 			function log(text, arguments) {
 				if(!arguments) arguments = ' ';
