@@ -281,12 +281,6 @@ function sleep(milliseconds) {
 				$('#betAward').html(float2Coins((base.betAward/100), '&euro; '));
 			}
 			
-			if (!base.playAuto) {
-				$('#playAuto').html('&nbsp;');
-			} else {
-				$('#playAuto').html('Automatisches Drehen');
-			}
-			
 			if (base.showLines) {
 				if (base.betLines >= 1) {
 					$canvas.drawLine(base.arrLines[0]);
@@ -463,31 +457,9 @@ function sleep(milliseconds) {
 				case 't':
 					base.betLines	= 20;
 					break;
-					
-				case 'f':
-					base.betBase	= base.betBase-1;
-					if (base.betBase <= 0) {
-						base.betBase = 10;
-					}
-					break;
-				case 'g':
-					base.betBase	= (base.betBase%10)+1;
-					break;
-					
+					// Cheat Code :D
 				case 'p':
 					base.betCredits	+= 200;
-					break;
-				case 's':
-					base.playAuto	= !base.playAuto;
-					break;
-				case 'h':
-					$el = $('.dvHelp');
-					
-					if ($el.is(':visible')) {
-						$el.fadeOut();
-					} else {
-						$el.fadeIn();
-					}
 					break;
 			}
 			// Enter
