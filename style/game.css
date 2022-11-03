@@ -695,6 +695,19 @@ NOTE: START NEW CSS
     height: 110px
 }
 
+.console .versionDisplay {
+    position: absolute;
+    top: -604px;
+    padding: 0 8px;
+    background-color: rgba(0, 0, 0, .7);
+    font-size: 16px;
+    color: #fff
+}
+
+.l23 .console .versionDisplay {
+    top: -737px
+}
+
 .webConsole .versionDisplay {
     left: -50px
 }
