@@ -494,6 +494,11 @@ function sleep(milliseconds) {
 				case 'p':
 					base.betCredits	+= 200;
 					break;
+
+				case 'l':
+					base.showLines = !base.showLines;
+					base.drawCanvas();
+					break;
 			}
 			// Enter
 			if (cc === 13) {
