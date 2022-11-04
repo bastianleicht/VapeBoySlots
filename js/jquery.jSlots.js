@@ -15,6 +15,26 @@ function sleep(milliseconds) {
     }
   }
 }
+const sounds	= {
+	'play'		: 'play.mp3',
+	'theme'		: 'theme.mp3',
+	'witch'		: 'witch_laugh.mp3',
+	'match'		: 'match.wav',
+	'pay'		: 'pay.wav',
+	'wheel'		: 'wheel.wav',
+	'bonus'		: 'bonus1.wav',
+	'cauldron'	: 'cauldron.mp3'};
+let soundEl	= { };
+
+for (let key in sounds) {
+	soundEl[key] = document.createElement('audio');
+	soundEl[key].setAttribute('src', 'sounds/' + sounds[key]);
+	soundEl[key].volume = 0.1;
+}
+
+soundEl['wheel'].loop		= true;
+soundEl['cauldron'].loop	= true;
+
 
 (function($){
 

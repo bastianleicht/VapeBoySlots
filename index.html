@@ -7,7 +7,6 @@
 		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jcanvas.js"	type="text/javascript" charset="utf-8"></script>
-		<script src="js/all.js"	type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.jSlots.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			function DoFullScreen() {
@@ -185,8 +184,38 @@
 
 			</div>
 	</div>
+	<script>
+		function pick(arg, def) { return (typeof arg == 'undefined' ? def : arg); }
+
+		function float2Coins(num,start) {
+			let x = 0;
+			start = pick(start, '');
+			if( num < 0 ) {
+				num = Math.abs(num);
+				x = 1;
+			}
+			if(isNaN(num)) num = "0";
+
+			let cents = Math.floor((num * 100 + 0.5) % 100);
+
+			num = Math.floor((num*100+0.5)/100).toString();
+
+			if(cents < 10) cents = "0" + cents;
+			for (let i = 0; i < Math.floor((num.length-(1+i))/3); i++) {
+				num = num.substring(0,num.length-(4*i+3))+'.' +num.substring(num.length-(4*i+3));
+			}
+
+			let ret = start + num + ',' + cents;
+
+			if (x === 1) ret = ' - ' + ret; return ret;
+		}
+	</script>
 		<script type="text/javascript" charset="utf-8">
 			let _pulseInterval;
+
+			$(window).load(function() {
+				$('.dvLoading').hide();
+			});
 
 			$('.ulSlot').jSlots({
 				number : 5,
