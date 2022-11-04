@@ -130,9 +130,8 @@
 									<div class="row1">
 										<div class="userInfoBox">
 											<div class="infoText info_none hidden"></div>
-											<div class="infoText info_choose hidden">W&auml;hle deinen EINSATZ</div>
-											<div class="infoText info_pleasePressSpin scaledOnce">Bitte START dr&uuml;cken</div>
-											<div class="infoText info_win hidden">GEWINN <span class="value"></span></div>
+											<div class="infoText scaledOnce" id="info_pleasePressSpin">Bitte START dr&uuml;cken</div>
+											<div class="infoText hidden" id="info_win">GEWINN <span class="value" id="betAward"></span></div>
 											<div class="infoText info_winFreegames hidden">GEWINN: <span class="value"></span> FREISPIELE</div>
 											<div class="infoText info_freegame hidden">FREISPIEL <span class="value"></span> von <span class="maxFreegames"></span></div>
 											<div class="infoText info_endFreegames hidden">Ende der FREISPIELE</div>
@@ -210,7 +209,7 @@
 			if (x === 1) ret = ' - ' + ret; return ret;
 		}
 	</script>
-		<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript" charset="utf-8">
 			let _pulseInterval;
 
 			$(window).load(function() {
@@ -230,15 +229,20 @@
 				time : 2000,
 				loops : 16,
 				onStart : function() {
+					console.log('onStart')
 					$('.dvSlot').removeClass('winner');
 					$('#playFancy').removeClass('isPulsing pulse');
+					$('#info_pleasePressSpin').addClass('hidden');
 				},
 				onEnd : function () {
+					console.log('onEnd')
 					$('#playFancy').addClass('isPulsing');
+					$('#info_pleasePressSpin').removeClass('hidden');
 				},
 				onWin : function(winCount, winners) {
-					$('#playFancy').addClass('isPulsing');
+					console.log('onWin')
 					// only fires if you win
+					$('#playFancy').addClass('isPulsing');
 
 					$.each(winners, function() {
 						this.addClass('winner');

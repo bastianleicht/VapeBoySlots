@@ -297,8 +297,16 @@ soundEl['cauldron'].loop	= true;
 			$('#betCredits').html(float2Coins((base.betCredits/100), ''));
 			$('#betLines').html(base.betLines);
 			if (base.betAward === 0 ) {
+				// Display "PressSpin"
+				$('#info_pleasePressSpin').removeClass('hidden');
+				// Hide Win Info
+				$('#info_win').addClass('hidden');
 				$('#betAward').html('&nbsp;');
 			} else {
+				// Hide "PressSpin"
+				$('#info_pleasePressSpin').addClass('hidden');
+				// Display Win Info
+				$('#info_win').removeClass('hidden');
 				$('#betAward').html(float2Coins((base.betAward/100), '&euro; '));
 			}
 			
@@ -798,6 +806,7 @@ soundEl['cauldron'].loop	= true;
         base.playSlots = function(free_play) {
 		
 			if ((base.betCredits - base.betValue) < 0) {
+				// TODO: Display Text
 				//base.betCredits += 1000;
 				return false;
 			}
