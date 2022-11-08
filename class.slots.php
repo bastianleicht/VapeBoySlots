@@ -40,11 +40,11 @@ class TPoint {
 
 			// Chances of Items
 			$this->itemPush($this->_objItems,'objItem8',	4);	// Alex NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem3',	4);	// Smoking Vorbidden NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem10',	5);	// Vape-Pen
-			$this->itemPush($this->_objItems,'objItem1',	6);	// 187 Hamburg
-			$this->itemPush($this->_objItems,'objItem12',	7);	// Shisha
-			$this->itemPush($this->_objItems,'objItem11',	8);	// Vape
+			$this->itemPush($this->_objItems,'objItem3',	5);	// Smoking Vorbidden NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem10',	6);	// Vape-Pen
+			$this->itemPush($this->_objItems,'objItem1',	7);	// 187 Hamburg
+			$this->itemPush($this->_objItems,'objItem12',	8);	// Shisha
+			$this->itemPush($this->_objItems,'objItem11',	9);	// Vape
 			$this->itemPush($this->_objItems,'objItem4',	9);	// Cloud
 			$this->itemPush($this->_objItems,'objItem6',	10);	// Vape Cloud
 			$this->itemPush($this->_objItems,'objItem5',	16);	// TODO: PLACEHOLDER
