@@ -47,7 +47,7 @@ class TPoint {
 			$this->itemPush($this->_objItems,'objItem11',	9);	// Vape
 			$this->itemPush($this->_objItems,'objItem4',	9);	// Cloud
 			$this->itemPush($this->_objItems,'objItem6',	10);	// Vape Cloud
-			$this->itemPush($this->_objItems,'objItem5',	16);	// TODO: PLACEHOLDER
+			$this->itemPush($this->_objItems,'objItem5',	16);	// Hanf Liquid
 			$this->itemPush($this->_objItems,'objItem7',	20);	// Liquid
 			$this->itemPush($this->_objItems,'objItem2',	23);	// Woman Vape
 			$this->itemPush($this->_objItems,'objItem9',	24);	// Vape Market
