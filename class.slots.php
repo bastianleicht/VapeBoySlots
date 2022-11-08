@@ -25,9 +25,9 @@ class TPoint {
 			'objItem4'		=>	14,	// Cloud
 			'objItem6'		=>	10,	// Vape-Cloud
 			'objItem5'		=>	5,	// TODO: PLACEHOLDER
-			'objItem7'		=>	3,	// Liquid
-			'objItem2'		=>	2,	// Woman Vape
-			'objItem9'		=>	1,	// Vape Market
+			'objItem7'		=>	4,	// Liquid
+			'objItem2'		=>	4,	// Woman Vape
+			'objItem9'		=>	3,	// Vape Market
 		);
 		
 		private array $Lines = array();
