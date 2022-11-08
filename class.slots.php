@@ -16,18 +16,18 @@ class TPoint {
 
 		// Value of Items
 		private array $_objValueItems = array (
-			'objItem6'		=>	1,
-			'objItem12'		=>	2,
-			'objItem9'		=>	3,
-			'objItem4'		=>	5,
-			'objItem5'		=>	10,
-			'objItem1'		=>	14,
-			'objItem10'		=>	26,
-			'objItem7'		=>	30,
-			'objItem8'		=>	40,
-			'objItem3'		=>	40,
-			'objItem11'		=>	60,
-			'objItem2'		=>	90
+			'objItem8'		=>	90,	// Alex NOTE: Bonus!
+			'objItem3'		=>	60,	// Smoking Forbidden NOTE: Bonus!
+			'objItem10'		=>	40,	// Vape-Pen
+			'objItem1'		=>	40,	// 187 Hamburg
+			'objItem12'		=>	30,	// Shisha
+			'objItem6'		=>	1,	// Vape-Cloud
+			'objItem9'		=>	3,	// Vape Market
+			'objItem4'		=>	5,	// Cloud
+			'objItem5'		=>	10,	// TODO: PLACEHOLDER
+			'objItem7'		=>	2,	// Liquid
+			'objItem11'		=>	26,	// Vape
+			'objItem2'		=>	14	// Woman Vape
 		);
 		
 		private array $Lines = array();
@@ -39,18 +39,18 @@ class TPoint {
 			}
 
 			// Chances of Items
-			$this->itemPush($this->_objItems,'objItem6',	24);
-			$this->itemPush($this->_objItems,'objItem12',	20);
-			$this->itemPush($this->_objItems,'objItem9',	16);
-			$this->itemPush($this->_objItems,'objItem4',	12);
-			$this->itemPush($this->_objItems,'objItem5',	10);
-			$this->itemPush($this->_objItems,'objItem3',	9);
-			$this->itemPush($this->_objItems,'objItem1',	8);
-			$this->itemPush($this->_objItems,'objItem10',	7);
-			$this->itemPush($this->_objItems,'objItem7',	6);
-			$this->itemPush($this->_objItems,'objItem8',	5);
-			$this->itemPush($this->_objItems,'objItem11',	4);
-			$this->itemPush($this->_objItems,'objItem2',	4);
+			$this->itemPush($this->_objItems,'objItem6',	24);	// Vape Cloud
+			$this->itemPush($this->_objItems,'objItem12',	20);	// Shisha
+			$this->itemPush($this->_objItems,'objItem9',	16);	// Vape Market
+			$this->itemPush($this->_objItems,'objItem4',	12);	// Cloud
+			$this->itemPush($this->_objItems,'objItem5',	10);	// PLACEHOLDER
+			$this->itemPush($this->_objItems,'objItem3',	4);		// Smoking Vorbidden NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem1',	8);		// 187 Hamburg
+			$this->itemPush($this->_objItems,'objItem10',	7);		// Vape-Pen
+			$this->itemPush($this->_objItems,'objItem7',	6);		// Liquid
+			$this->itemPush($this->_objItems,'objItem8',	4);		// Alex NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem11',	9);		// Vape
+			$this->itemPush($this->_objItems,'objItem2',	5);		// Woman Vape
 			
 			
 			
