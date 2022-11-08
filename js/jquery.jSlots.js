@@ -812,7 +812,7 @@ soundEl['cauldron'].loop	= true;
 			}
 			
 			if (base.curBonus !== '') {
-				return false;
+				//return false;
 			}			
 			
 			$.ajax({
