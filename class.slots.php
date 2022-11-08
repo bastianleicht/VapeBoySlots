@@ -101,7 +101,7 @@ class TPoint {
 					break;
 				}
 				case 'objItem8': {
-					$ret = 'y';
+					$ret = 'c';
 					break;
 				}
 			}
