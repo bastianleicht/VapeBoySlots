@@ -16,13 +16,13 @@ class TPoint {
 
 		// Value of Items
 		private array $_objValueItems = array (
-			'objItem8'		=>	90,	// Alex NOTE: Bonus!
-			'objItem3'		=>	60,	// Smoking Forbidden NOTE: Bonus!
-			'objItem10'		=>	40,	// Vape-Pen
-			'objItem1'		=>	40,	// 187 Hamburg
-			'objItem12'		=>	30,	// Shisha
-			'objItem11'		=>	26,	// Vape
-			'objItem4'		=>	14,	// Cloud
+			'objItem8'		=>	70,	// Alex NOTE: Bonus!
+			'objItem3'		=>	50,	// Smoking Forbidden NOTE: Bonus!
+			'objItem10'		=>	30,	// Vape-Pen
+			'objItem1'		=>	25,	// 187 Hamburg
+			'objItem12'		=>	20,	// Shisha
+			'objItem11'		=>	15,	// Vape
+			'objItem4'		=>	15,	// Cloud
 			'objItem6'		=>	10,	// Vape-Cloud
 			'objItem5'		=>	5,	// Hanf Liquid
 			'objItem7'		=>	3,	// Liquid
