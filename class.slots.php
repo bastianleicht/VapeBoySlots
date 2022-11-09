@@ -24,7 +24,7 @@ class TPoint {
 			'objItem11'		=>	26,	// Vape
 			'objItem4'		=>	14,	// Cloud
 			'objItem6'		=>	10,	// Vape-Cloud
-			'objItem5'		=>	5,	// TODO: PLACEHOLDER
+			'objItem5'		=>	5,	// Hanf Liquid
 			'objItem7'		=>	3,	// Liquid
 			'objItem2'		=>	2,	// Woman Vape
 			'objItem9'		=>	1,	// Vape Market
@@ -40,7 +40,7 @@ class TPoint {
 
 			// Chances of Items
 			$this->itemPush($this->_objItems,'objItem8',	4);	// Alex NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem3',	5);	// Smoking Vorbidden NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem3',	5);	// Smoking Forbidden NOTE: Bonus!
 			$this->itemPush($this->_objItems,'objItem10',	6);	// Vape-Pen
 			$this->itemPush($this->_objItems,'objItem1',	7);	// 187 Hamburg
 			$this->itemPush($this->_objItems,'objItem12',	8);	// Shisha
