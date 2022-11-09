@@ -520,8 +520,11 @@ soundEl['cauldron'].loop	= true;
 			switch(ch) {
 				// Cheat Code :D
 				case 'p':
-					// 20 Coins
+					// 200 Coins
 					base.betCredits	+= 20000;
+					base.drawCanvas();
+					$('#info_pleasePressSpin').removeClass('hidden');
+					$('#info_notEnoughCoins').addClass('hidden');
 					break;
 
 				case 'l':
@@ -798,8 +801,9 @@ soundEl['cauldron'].loop	= true;
         base.playSlots = function(free_play) {
 		
 			if ((base.betCredits - base.betValue) < 0) {
-				// TODO: Display Text
 				//base.betCredits += 1000;
+				$('#info_pleasePressSpin').addClass('hidden');
+				$('#info_notEnoughCoins').removeClass('hidden');
 				return false;
 			}
 			
