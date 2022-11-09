@@ -520,7 +520,8 @@ soundEl['cauldron'].loop	= true;
 			switch(ch) {
 				// Cheat Code :D
 				case 'p':
-					base.betCredits	+= 200;
+					// 20 Coins
+					base.betCredits	+= 20000;
 					break;
 
 				case 'l':
