@@ -96,11 +96,8 @@ class TPoint {
 		public function isBonus($el) {
 			$ret = '';
 			switch($el) {
+				case 'objItem8':
 				case 'objItem3': {
-					$ret = 'c';
-					break;
-				}
-				case 'objItem8': {
 					$ret = 'c';
 					break;
 				}

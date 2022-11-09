@@ -303,15 +303,15 @@ NOTE: START NEW CSS
     z-index: 3
 }
 
-.loaded .gameContainer {
+.gameContainer {
     background-image: url('../images/background/bg_middle.png')
 }
 
-.loaded .headlineContainer {
+.headlineContainer {
     background-image: url('../images/background/bg_top.png')
 }
 
-.loaded .mainControlBoxBG {
+.mainControlBoxBG {
     background-image: url(../images/background/bg_bottom.png)
 }
 

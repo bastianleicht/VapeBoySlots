@@ -514,8 +514,8 @@ soundEl['cauldron'].loop	= true;
 		
 		$(document).on('keypress', function(e){
 			e = e || window.event;
-			var cc = e.keyCode ? (e.keyCode) : e.which;
-			var ch = String.fromCharCode(cc);
+			const cc = e.keyCode ? (e.keyCode) : e.which;
+			const ch = String.fromCharCode(cc);
 			
 			switch(ch) {
 				// Cheat Code :D

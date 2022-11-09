@@ -31,8 +31,41 @@
 			}
 		</script>
 	</head>
+	<style>
+		.gradient-border {
+			--borderWidth: 4px;
+			background: #1D1F20;
+			position: relative;
+			border-radius: var(--borderWidth);
+		}
+		.gradient-border:after {
+			content: '';
+			position: absolute;
+			top: calc(-1 * var(--borderWidth));
+			left: calc(-1 * var(--borderWidth));
+			height: calc(100% + var(--borderWidth) * 2);
+			width: calc(100% + var(--borderWidth) * 2);
+			background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+			border-radius: calc(2 * var(--borderWidth));
+			z-index: -1;
+			animation: animatedgradient 3s ease alternate infinite;
+			background-size: 300% 300%;
+		}
+
+		@keyframes animatedgradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+	</style>
 	<body style="background-color: slategray;">
-	<div class="container show loaded" style="background-color: white;">
+	<div class="container gradient-border" style="background-color: white;">
 		<div class="dvLoading">
 			Wird geladen...
 			<div class="objItem1 dvSizeNull"></div>
@@ -52,39 +85,6 @@
 		<div class="headlineContainer" style="background-image: url('./images/background/bg_top.png');"></div>
 
 		<div class="gameContainer" style="background-image: url('./images/background/bg_middle.png');">
-			<style>
-				.gradient-border {
-					--borderWidth: 4px;
-					background: #1D1F20;
-					position: relative;
-					border-radius: var(--borderWidth);
-				}
-				.gradient-border:after {
-					content: '';
-					position: absolute;
-					top: calc(-1 * var(--borderWidth));
-					left: calc(-1 * var(--borderWidth));
-					height: calc(100% + var(--borderWidth) * 2);
-					width: calc(100% + var(--borderWidth) * 2);
-					background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-					border-radius: calc(2 * var(--borderWidth));
-					z-index: -1;
-					animation: animatedgradient 3s ease alternate infinite;
-					background-size: 300% 300%;
-				}
-
-				@keyframes animatedgradient {
-					0% {
-						background-position: 0% 50%;
-					}
-					50% {
-						background-position: 100% 50%;
-					}
-					100% {
-						background-position: 0% 50%;
-					}
-				}
-			</style>
 			<div class="dvGame gradient-border">
 				<div class="dvCenter">
 					<div class="dvCol">
@@ -107,7 +107,7 @@
 						<div>
 							<div class="fl userInfoContainer orangeButtonsActWinContainer">
 								<div class="orangeButtonsBox">
-									<div class="fl controlButton small controlButtonOrange controlButton_lines justShow">
+									<div class="fl controlButton small controlButtonOrange justShow">
 										<div class="clickArea plus controlButton_linesplus" id="increaseLines" style="visibility: visible;"></div>
 										<div class="clickArea minus controlButton_linesminus" id="decreaseLines" style="visibility: visible;"></div>
 										<div class="twolined infoArea">
@@ -115,7 +115,7 @@
 											<div class="infoLabel">LINIEN</div>
 										</div>
 									</div>
-									<div class="fr controlButton small controlButtonOrange controlButton_linebet">
+									<div class="fr controlButton small controlButtonOrange">
 										<div class="clickArea plus controlButton_linebetplus" id="increaseBet" style="visibility: visible;"></div>
 										<div class="clickArea minus controlButton_linebetminus" id="decreaseBet" style="visibility: visible;"></div>
 										<div class="twolined infoArea">
