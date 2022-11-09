@@ -39,18 +39,18 @@ class TPoint {
 			}
 
 			// Chances of Items
-			$this->itemPush($this->_objItems,'objItem8',	4);	// Alex NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem3',	5);	// Smoking Forbidden NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem10',	6);	// Vape-Pen
-			$this->itemPush($this->_objItems,'objItem1',	7);	// 187 Hamburg
-			$this->itemPush($this->_objItems,'objItem12',	8);	// Shisha
-			$this->itemPush($this->_objItems,'objItem11',	9);	// Vape
-			$this->itemPush($this->_objItems,'objItem4',	9);	// Cloud
-			$this->itemPush($this->_objItems,'objItem6',	10);	// Vape Cloud
-			$this->itemPush($this->_objItems,'objItem5',	16);	// Hanf Liquid
-			$this->itemPush($this->_objItems,'objItem7',	20);	// Liquid
-			$this->itemPush($this->_objItems,'objItem2',	23);	// Woman Vape
-			$this->itemPush($this->_objItems,'objItem9',	24);	// Vape Market
+			$this->itemPush($this->_objItems,'objItem8',	4);	//4		Alex NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem3',	5);	//9 	Smoking Forbidden NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem10',	6);	//15 	Vape-Pen
+			$this->itemPush($this->_objItems,'objItem1',	7);	//22 	187 Hamburg
+			$this->itemPush($this->_objItems,'objItem12',	8);	//30 	Shisha
+			$this->itemPush($this->_objItems,'objItem11',	8);	//38 	Vape
+			$this->itemPush($this->_objItems,'objItem4',	9);	//47 	Cloud
+			$this->itemPush($this->_objItems,'objItem6',	10);	//57 	Vape Cloud
+			$this->itemPush($this->_objItems,'objItem5',	10);	//67 	Hanf Liquid
+			$this->itemPush($this->_objItems,'objItem7',	11);	//78	Liquid
+			$this->itemPush($this->_objItems,'objItem2',	11);	//89 	Woman Vape
+			$this->itemPush($this->_objItems,'objItem9',	11);	//100 	Vape Market
 			
 			
 			
