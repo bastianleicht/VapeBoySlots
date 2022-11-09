@@ -1,39 +1,10 @@
 @charset "utf-8";
-/*
-body, html {
-	margin				: 0;
-	padding				: 0;
-	font-family: arial, serif;
-	font-size			: 12px;
-	position			: relative;
 
-}
-html {
-	height				: 100%;
-}
-body {
-	position			: absolute;
-	background-position	: center;
-	background-repeat	: no-repeat;
-	background-color	: black;
-	overflow			: hidden;
-
-	min-height			: 100%;
-	width				: 100%;
-}
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-button:focus {outline:0;}
-*/
 ul {
 	padding				: 0;
 	margin				: 0;
 	list-style			: none;
 }
-
 
 .dvCanvas {
     position: absolute;
@@ -53,7 +24,7 @@ ul {
     color: white;
     text-align: center;
     z-index: 10;
-    font-family: Tahoma;
+    font-family: Tahoma, serif;
 }
 
 .jSlots-wrapper {
@@ -64,56 +35,6 @@ ul {
     display: flex;
     justify-content: space-between;
 }
-
-.dvTop {
-
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-    padding-top: 30px;
-
-
-}
-
-.tbInfo {
-    color: white;
-    font-weight: bold;
-    border-collapse: collapse;
-    font-size: 20px;
-    width: 100%;
-}
-
-.tbInfo td {
-
-}
-
-
-.dvBox {
-    background: #c4032d; /* Old browsers */
-    background: -moz-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c4032d), color-stop(100%, #a3030d)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #c4032d 0%, #a3030d 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #c4032d 0%, #a3030d 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4032d', endColorstr='#a3030d', GradientType=0); /* IE6-9 */
-
-
-    border: 2px solid gold;
-    padding: 5px 12px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-    font-size: 28px;
-    color: white;
-    font-weight: bold;
-}
-
 
 /*.dvCenter {
 	position			: relative;
@@ -166,83 +87,6 @@ ul {
     width: 100%;
     height: 100%;
     opacity: 0;
-}
-
-.source-image {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.dvFoot {
-    width: 80%;
-    margin: 0 auto;
-    height: 10%;
-    padding: 10px;
-}
-
-.dvMsg {
-    color: white;
-}
-
-._dvBtnPlay {
-    float: right;
-    color: white;
-    font-size: 24px;
-    width: 140px;
-    border-color: silver;
-    cursor: pointer;
-}
-
-.dvBtnPlay {
-    font-family: Tahoma;
-    position: relative;
-    color: white;
-    background-color: #c00;
-    font-weight: bold;
-    font-size: 30px;
-    display: block;
-    padding: 10px 5px;
-    width: 160px;
-    text-align: center;
-    cursor: pointer;
-    float: right;
-    border: 1px solid gray;
-    top: 0;
-
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    -webkit-box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
-    -moz-box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
-    box-shadow: 0px 9px 0px #700, 0px 9px 25px rgba(0, 0, 0, .7);
-
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    -ms-transition: all 0.1s ease;
-    -o-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-
-}
-
-.dvBtnPlay:active {
-    -webkit-box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
-    -moz-box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
-    box-shadow: 0px 3px 0px #700, 0px 3px 6px rgba(0, 0, 0, .9);
-    position: relative;
-    top: 6px;
-}
-
-.dvBetBase {
-    float: right;
-    position: absolute;
-    padding-top: 20px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
 }
 
 .dvSizeNull {
@@ -433,10 +277,7 @@ NOTE: START NEW CSS
     position: relative;
     width: 1280px;
     margin: 0 auto;
-    overflow: hidden
-}
-
-.container.l23 {
+    overflow: hidden;
     height: 853px
 }
 
@@ -618,27 +459,12 @@ NOTE: START NEW CSS
 
 .console .versionDisplay {
     position: absolute;
-    top: -604px;
     padding: 0 8px;
     background-color: rgba(0, 0, 0, .7);
     font-size: 16px;
-    color: #fff
-}
-
-.l23 .console .versionDisplay {
-    top: -737px
-}
-
-.webConsole .versionDisplay {
+    color: #fff;
+    top: -737px;
     left: -50px
-}
-
-.console .versionDisplay .slotSessionStats {
-    padding-left: 26px
-}
-
-.console .versionDisplay .slotSessionStats .currLeft {
-    padding-right: 2px
 }
 
 .console .controlButton {
@@ -705,11 +531,6 @@ NOTE: START NEW CSS
     position: absolute;
     top: 0;
     right: 107px
-}
-
-.webConsole .controlButton_paytable {
-    width: 52px;
-    margin-left: 6px
 }
 
 .webConsole .controlButton.twolined {
@@ -828,20 +649,12 @@ NOTE: START NEW CSS
     font-size: 28px
 }
 
-.webConsole .userInfoContainer.userInfo .row2 .userInfoBox .fontsizeFaker {
-    font-size: 28px
-}
-
 .webConsole .userInfoContainer.userInfo .row2 .userInfoBox .infoValue .currLeft {
     padding-right: 3px
 }
 
 .webConsole .userInfoContainer.userInfo .userInfoBox .info_win .value .currLeft {
     padding-right: 5px
-}
-
-.webConsole .userInfoContainer.userInfo .userInfoBox .info_lastWin .value .currLeft {
-    padding-right: 4px
 }
 
 .webConsole .headlineButtons {
@@ -859,15 +672,6 @@ NOTE: START NEW CSS
 
 .webConsole .headlineButtons .controlButton + .controlButton {
     margin-left: 5px
-}
-
-.webConsole .reelClickBox {
-    position: absolute;
-    left: 57px;
-    bottom: 130px;
-    width: 1066px;
-    height: 576px;
-    padding: 0
 }
 
 .webConsole.bg .controlButtonViolet {

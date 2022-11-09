@@ -534,15 +534,6 @@ soundEl['cauldron'].loop	= true;
 					base.playSlots();
 				}
 			}
-			
-			if ($.inArray(ch, ['q','w','e','r','t','g','f','p','s']) > -1) {
-				base.showLines	= true;
-				base.drawCanvas();
-			}
-			
-			if ($.inArray(ch, ['1','2','3','4','5']) > -1) {
-				base.doBonus(ch);
-			}
 		});
 
         // Slot Constructor
