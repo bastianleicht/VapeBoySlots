@@ -812,7 +812,12 @@ soundEl['cauldron'].loop	= true;
 			
 			if (base.curBonus !== '') {
 				//return false;
-			}			
+			}
+
+			if(free_play) {
+				$('#info_winFreegames').addClass('hidden');
+				$('#currFreegame').innerHTML = base.freeSpins;
+			}
 			
 			$.ajax({
 					url: 'sort.php?a=lucky&l=' + base.betLines + '&b=' + base.betBase,
