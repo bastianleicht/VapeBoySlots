@@ -539,10 +539,6 @@ soundEl['cauldron'].loop	= true;
 				base.showLines	= true;
 				base.drawCanvas();
 			}
-			
-			if ($.inArray(ch, ['1','2','3','4','5']) > -1) {
-				base.doBonus(ch);
-			}
 		});
 
         // Slot Constructor
@@ -645,6 +641,7 @@ soundEl['cauldron'].loop	= true;
 
         };
 		
+		// TODO: remove
 		base.doBonus =  function(ch) {
 			if (base.curBonus === '') return false;
 			
@@ -671,8 +668,8 @@ soundEl['cauldron'].loop	= true;
 		}
 		
 		base.activateBonus = function(playBonusSound) {
+			// TODO: Remove
 			alert('You fount the Bonus!');
-
 
 			if (base.curBonus === '') return false;
 			
@@ -685,6 +682,8 @@ soundEl['cauldron'].loop	= true;
 			base.freeSpins = true;
 			base.freeSpinCounter = 10;
 
+			$('#info_pleasePressSpin').addClass('hidden');
+			$('#info_winFreegames').removeClass('hidden');
 			/*
 			if (base.curBonus === 'bonusCauldron') {
 				$('#CauldronLine').find('div').each(function() {						
@@ -768,7 +767,7 @@ soundEl['cauldron'].loop	= true;
 							base.betAward += parseInt(_av[v]);
 
 							if (_av[v].indexOf('c') > 0) {
-								base.curBonus = 'bonusCauldron';
+								base.curBonus = 'freePlay';
 								soundEl['bonus'].play();
 							} else {
 								soundEl['match'].pause();
@@ -845,7 +844,7 @@ soundEl['cauldron'].loop	= true;
             base.doneCount = 0;
             base.winners = [];
 			base.ILines	 = [];
-			base.betCredits = base.betCredits - base.betValue;
+			if(!free_play) base.betCredits = base.betCredits - base.betValue;
 			$('#betCredits').html(float2Coins((base.betCredits/100), '&euro; '));
 			
 			
