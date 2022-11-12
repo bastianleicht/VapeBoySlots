@@ -309,6 +309,8 @@ soundEl['cauldron'].loop	= true;
 				$('#info_win').removeClass('hidden');
 				$('#betAward').html(float2Coins((base.betAward/100), '&euro; '));
 			}
+
+			$('#info_notEnoughCoins').addClass('hidden');
 			
 			if (base.showLines) {
 				if (base.betLines >= 1) {
@@ -806,6 +808,7 @@ soundEl['cauldron'].loop	= true;
 				$('#info_notEnoughCoins').removeClass('hidden');
 				return false;
 			}
+			$('#info_notEnoughCoins').addClass('hidden');
 			
 			if (base.curBonus !== '') {
 				//return false;
