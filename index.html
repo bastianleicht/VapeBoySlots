@@ -31,41 +31,8 @@
 			}
 		</script>
 	</head>
-	<style>
-		.gradient-border {
-			--borderWidth: 4px;
-			background: #1D1F20;
-			position: relative;
-			border-radius: var(--borderWidth);
-		}
-		.gradient-border:after {
-			content: '';
-			position: absolute;
-			top: calc(-1 * var(--borderWidth));
-			left: calc(-1 * var(--borderWidth));
-			height: calc(100% + var(--borderWidth) * 2);
-			width: calc(100% + var(--borderWidth) * 2);
-			background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-			border-radius: calc(2 * var(--borderWidth));
-			z-index: -1;
-			animation: animatedgradient 3s ease alternate infinite;
-			background-size: 300% 300%;
-		}
-
-		@keyframes animatedgradient {
-			0% {
-				background-position: 0% 50%;
-			}
-			50% {
-				background-position: 100% 50%;
-			}
-			100% {
-				background-position: 0% 50%;
-			}
-		}
-	</style>
 	<body style="background-color: slategray;">
-	<div class="container gradient-border" style="background-color: white;">
+	<div class="container show l23 loaded" style="background-color: white;">
 		<div class="dvLoading">
 			Wird geladen...
 			<div class="objItem1 dvSizeNull"></div>
@@ -85,6 +52,39 @@
 		<div class="headlineContainer" style="background-image: url('./images/background/bg_top.png');"></div>
 
 		<div class="gameContainer" style="background-image: url('./images/background/bg_middle.png');">
+			<style>
+				.gradient-border {
+					--borderWidth: 4px;
+					background: #1D1F20;
+					position: relative;
+					border-radius: var(--borderWidth);
+				}
+				.gradient-border:after {
+					content: '';
+					position: absolute;
+					top: calc(-1 * var(--borderWidth));
+					left: calc(-1 * var(--borderWidth));
+					height: calc(100% + var(--borderWidth) * 2);
+					width: calc(100% + var(--borderWidth) * 2);
+					background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+					border-radius: calc(2 * var(--borderWidth));
+					z-index: -1;
+					animation: animatedgradient 3s ease alternate infinite;
+					background-size: 300% 300%;
+				}
+
+				@keyframes animatedgradient {
+					0% {
+						background-position: 0% 50%;
+					}
+					50% {
+						background-position: 100% 50%;
+					}
+					100% {
+						background-position: 0% 50%;
+					}
+				}
+			</style>
 			<div class="dvGame gradient-border">
 				<div class="dvCenter">
 					<div class="dvCol">
@@ -98,67 +98,67 @@
 			</div>
 		</div>
 
-		<div class="mainControlBox">
-			<div class="fullscreenWorkaround"></div>
-			<div class="mainControlBoxBG">
-				<div class="console webConsole">
+			<div class="mainControlBox">
+				<div class="fullscreenWorkaround"></div>
+				<div class="mainControlBoxBG">
+					<div class="console webConsole de">
 
-					<div class="mainBox">
-						<div>
-							<div class="fl userInfoContainer orangeButtonsActWinContainer">
-								<div class="orangeButtonsBox">
-									<div class="fl controlButton small controlButtonOrange justShow">
-										<div class="clickArea plus controlButton_linesplus" id="increaseLines" style="visibility: visible;"></div>
-										<div class="clickArea minus controlButton_linesminus" id="decreaseLines" style="visibility: visible;"></div>
-										<div class="twolined infoArea">
-											<div class="infoValue value_lines" id="betLines"><span class="value">10</span></div>
-											<div class="infoLabel">LINIEN</div>
+						<div class="mainBox">
+							<div>
+								<div class="fl userInfoContainer orangeButtonsActWinContainer">
+									<div class="orangeButtonsBox">
+										<div class="fl controlButton small controlButtonOrange controlButton_lines justShow">
+											<div class="clickArea plus controlButton_linesplus" id="increaseLines" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linesminus" id="decreaseLines" style="visibility: visible;"></div>
+											<div class="twolined infoArea">
+												<div class="infoValue value_lines" id="betLines"><span class="value">10</span></div>
+												<div class="infoLabel">LINIEN</div>
+											</div>
 										</div>
-									</div>
-									<div class="fr controlButton small controlButtonOrange">
-										<div class="clickArea plus controlButton_linebetplus" id="increaseBet" style="visibility: visible;"></div>
-										<div class="clickArea minus controlButton_linebetminus" id="decreaseBet" style="visibility: visible;"></div>
-										<div class="twolined infoArea">
-											<div class="infoValue value_linebet "><span class="value" id="betBase">2,00</span></div>
-											<div class="infoLabel">EINSATZ</div>
+										<div class="fr controlButton small controlButtonOrange controlButton_linebet">
+											<div class="clickArea plus controlButton_linebetplus" id="increaseBet" style="visibility: visible;"></div>
+											<div class="clickArea minus controlButton_linebetminus" id="decreaseBet" style="visibility: visible;"></div>
+											<div class="twolined infoArea">
+												<div class="infoValue value_linebet "><span class="value" id="betBase">2,00</span></div>
+												<div class="infoLabel">EINSATZ</div>
+											</div>
 										</div>
+										<div class="clear"></div>
 									</div>
-									<div class="clear"></div>
 								</div>
+								<div class="fl userInfoContainer userInfo">
+									<div class="row1">
+										<div class="userInfoBox">
+											<div class="infoText info_none hidden"></div>
+											<div class="infoText scaledOnce" id="info_pleasePressSpin">Bitte START dr&uuml;cken</div>
+											<div class="infoText hidden" id="info_win">GEWINN <span class="value" id="betAward"></span></div>
+											<div class="infoText hidden" id="info_winFreegames">GEWINN: <span class="value">10</span> FREISPIELE</div>
+											<div class="infoText hidden" id="info_freegame">FREISPIEL <span class="value"  id="currFreegame"></span> von <span class="maxFreegames">10</span></div>
+											<div class="infoText info_endFreegames hidden">Ende der FREISPIELE</div>
+											<div class="infoText hidden" id="info_notEnoughCoins">Nicht gen&uuml;gend GUTHABEN</div>
+										</div>
+									</div>
+									<div class="row2">
+										<div class="leftBox userInfoBox value_totalbet">
+											<span class="infoLabel">GESAMT EINSATZ</span>
+											<span class="infoValue"><span class="value" id="betValue"><span class="currLeft"></span>1.00</span></span>
+										</div>
+										<div class="rightBox userInfoBox balanceBox">
+											<div class="value_money">
+												<span class="infoLabel moneyLabel">GUTHABEN</span>
+												<span class="infoValue"><span class="value" id="betCredits"><span class="currLeft"></span>1000,00</span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clear"></div>
 							</div>
-							<div class="fl userInfoContainer userInfo">
-								<div class="row1">
-									<div class="userInfoBox">
-										<div class="infoText info_none hidden"></div>
-										<div class="infoText scaledOnce" id="info_pleasePressSpin">Bitte START dr&uuml;cken</div>
-										<div class="infoText hidden" id="info_win">GEWINN <span class="value" id="betAward"></span></div>
-										<div class="infoText info_winFreegames hidden">GEWINN: <span class="value"></span> FREISPIELE</div>
-										<div class="infoText info_freegame hidden">FREISPIEL <span class="value"></span> von <span class="maxFreegames"></span></div>
-										<div class="infoText info_endFreegames hidden">Ende der FREISPIELE</div>
-										<div class="infoText hidden" id="info_notEnoughCoins">Nicht gen&uuml;gend GUTHABEN</div>
-									</div>
-								</div>
-								<div class="row2">
-									<div class="leftBox userInfoBox value_totalbet">
-										<span class="infoLabel">GESAMT EINSATZ</span>
-										<span class="infoValue"><span class="value" id="betValue"><span class="currLeft"></span>1.00</span></span>
-									</div>
-									<div class="rightBox userInfoBox balanceBox">
-										<div class="value_money">
-											<span class="infoLabel moneyLabel">GUTHABEN</span>
-											<span class="infoValue"><span class="value" id="betCredits"><span class="currLeft"></span>1000,00</span></span>
-										</div>
-									</div>
-								</div>
+							<div class="actionButtons">
+								<!-- TODO: Add Loop for "pulse" Class -->
+								<div class="fr controlButton big reactsToPressSpace spinButton controlButton_spin isPulsing pulse" id="playFancy"></div>
+								<div class="fr controlButton controlButtonGreen controlButton_autospin autospinChoiceEntry" id="buttonAutoSpin">AUTO</div>
+								<div class="clear"></div>
 							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="actionButtons">
-							<!-- TODO: Add Loop for "pulse" Class -->
-							<div class="fr controlButton big reactsToPressSpace spinButton controlButton_spin isPulsing pulse" id="playFancy"></div>
-							<div class="fr controlButton controlButtonGreen controlButton_autospin autospinChoiceEntry" id="buttonAutoSpin">AUTO</div>
-							<div class="clear"></div>
-						</div>
 
 					</div>
 

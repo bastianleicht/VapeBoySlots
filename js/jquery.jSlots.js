@@ -311,7 +311,7 @@ soundEl['cauldron'].loop	= true;
 			}
 
 			$('#info_notEnoughCoins').addClass('hidden');
-			
+
 			if (base.showLines) {
 				if (base.betLines >= 1) {
 					$canvas.drawLine(base.arrLines[0]);
@@ -516,17 +516,13 @@ soundEl['cauldron'].loop	= true;
 		
 		$(document).on('keypress', function(e){
 			e = e || window.event;
-			const cc = e.keyCode ? (e.keyCode) : e.which;
-			const ch = String.fromCharCode(cc);
+			var cc = e.keyCode ? (e.keyCode) : e.which;
+			var ch = String.fromCharCode(cc);
 			
 			switch(ch) {
 				// Cheat Code :D
 				case 'p':
-					// 200 Coins
-					base.betCredits	+= 20000;
-					base.drawCanvas();
-					$('#info_pleasePressSpin').removeClass('hidden');
-					$('#info_notEnoughCoins').addClass('hidden');
+					base.betCredits	+= 200;
 					break;
 
 				case 'l':
@@ -539,6 +535,15 @@ soundEl['cauldron'].loop	= true;
 				if (!base.isSpinning) {
 					base.playSlots();
 				}
+			}
+			
+			if ($.inArray(ch, ['q','w','e','r','t','g','f','p','s']) > -1) {
+				base.showLines	= true;
+				base.drawCanvas();
+			}
+			
+			if ($.inArray(ch, ['1','2','3','4','5']) > -1) {
+				base.doBonus(ch);
 			}
 		});
 
@@ -803,12 +808,10 @@ soundEl['cauldron'].loop	= true;
         base.playSlots = function(free_play) {
 		
 			if ((base.betCredits - base.betValue) < 0) {
+				// TODO: Display Text
 				//base.betCredits += 1000;
-				$('#info_pleasePressSpin').addClass('hidden');
-				$('#info_notEnoughCoins').removeClass('hidden');
 				return false;
 			}
-			$('#info_notEnoughCoins').addClass('hidden');
 			
 			if (base.curBonus !== '') {
 				//return false;
