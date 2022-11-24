@@ -16,18 +16,18 @@ class TPoint {
 
 		// Value of Items
 		private array $_objValueItems = array (
-			'objItem8'		=>	35,	// Alex NOTE: Bonus!
-			'objItem3'		=>	29,	// Smoking Forbidden NOTE: Bonus!
-			'objItem10'		=>	22,	// Vape-Pen
-			'objItem1'		=>	19,	// 187 Hamburg
-			'objItem12'		=>	15,	// Shisha
-			'objItem11'		=>	12,	// Vape
-			'objItem4'		=>	10,	// Cloud
-			'objItem6'		=>	8,	// Vape-Cloud
-			'objItem5'		=>	5,	// Hanf Liquid
-			'objItem7'		=>	3,	// Liquid
-			'objItem2'		=>	3,	// Woman Vape
-			'objItem9'		=>	3,	// Vape Market
+			'objItem8'		=>	35,		// Alex NOTE: Bonus!
+			'objItem3'		=>	29,		// Smoking Forbidden NOTE: Bonus!
+			'objItem10'		=>	22,		// Vape-Pen
+			'objItem1'		=>	19,		// 187 Hamburg
+			'objItem12'		=>	15,		// Shisha
+			'objItem11'		=>	12,		// Vape
+			'objItem4'		=>	10,		// Cloud
+			'objItem6'		=>	8,		// Vape-Cloud
+			'objItem5'		=>	5,		// Hanf Liquid
+			'objItem7'		=>	3,		// Liquid
+			'objItem2'		=>	3,		// Woman Vape
+			'objItem9'		=>	3,		// Vape Market
 		);
 		
 		private array $Lines = array();
@@ -39,13 +39,13 @@ class TPoint {
 			}
 
 			// Chances of Items
-			$this->itemPush($this->_objItems,'objItem8',	4);	//4		Alex NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem3',	5);	//9 	Smoking Forbidden NOTE: Bonus!
-			$this->itemPush($this->_objItems,'objItem10',	6);	//15 	Vape-Pen
-			$this->itemPush($this->_objItems,'objItem1',	7);	//22 	187 Hamburg
-			$this->itemPush($this->_objItems,'objItem12',	8);	//30 	Shisha
-			$this->itemPush($this->_objItems,'objItem11',	8);	//38 	Vape
-			$this->itemPush($this->_objItems,'objItem4',	9);	//47 	Cloud
+			$this->itemPush($this->_objItems,'objItem8',	4);		//4		Alex NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem3',	5);		//9 	Smoking Forbidden NOTE: Bonus!
+			$this->itemPush($this->_objItems,'objItem10',	6);		//15 	Vape-Pen
+			$this->itemPush($this->_objItems,'objItem1',	7);		//22 	187 Hamburg
+			$this->itemPush($this->_objItems,'objItem12',	8);		//30 	Shisha
+			$this->itemPush($this->_objItems,'objItem11',	8);		//38 	Vape
+			$this->itemPush($this->_objItems,'objItem4',	9);		//47 	Cloud
 			$this->itemPush($this->_objItems,'objItem6',	10);	//57 	Vape Cloud
 			$this->itemPush($this->_objItems,'objItem5',	10);	//67 	Hanf Liquid
 			$this->itemPush($this->_objItems,'objItem7',	11);	//78	Liquid
@@ -197,11 +197,11 @@ class TPoint {
 			$GLOBALS['base'] = (isset($_REQUEST['b'])) ? (int)$_REQUEST['b'] : 1;		
 			$GLOBALS['lines'] = (isset($_REQUEST['l'])) ? (int)$_REQUEST['l'] : 1;
 		
+			// Randomize Items on 5 Rows and 3 Columns
 			$columns = array();
 			for ($i=1; $i<=5; $i++) {
 				$SlotsItems = array();
 				for ($j=1; $j<=3; $j++) {
-					//randomize();
 					//array_rand($this->_objItems, 1)
 					$SlotsItems[] = $this->_objItems[array_rand($this->_objItems, 1)];
 				}
@@ -210,6 +210,7 @@ class TPoint {
 			//print_r($columns);
 			
 			
+			// Function: Check for matching Lines
 			$LinesMatch = array();
 			foreach($this->Lines as $i => $v) {
 				$CurrentLine = array();

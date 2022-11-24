@@ -210,28 +210,32 @@
 			});
 
 			$('.ulSlot').jSlots({
-				number : 5,
-				winnerNumber : 7,
-				spinner : '#playFancy',
-				autoplay: '#buttonAutoSpin',
-				betIncrease: '#increaseBet',
-				betDecrease: '#decreaseBet',
-				linesIncrease: '#increaseLines',
-				linesDecrease: '#decreaseLines',
-				easing : 'linear',
-				time : 2000,
-				loops : 16,
+				number : 5,						// Number: number of slots
+				winnerNumber : 7,				// Number or Array: list item number(s) upon which to trigger a win, 1-based index, NOT ZERO-BASED
+				spinner : '#playFancy',			// CSS Selector: element to bind the start event to
+				autoplay: '#buttonAutoSpin',	// CSS Selector: element to bind the autoplay event to
+				betIncrease: '#increaseBet',	// CSS Selector: element to bind the betIncrease event to
+				betDecrease: '#decreaseBet',	// CSS Selector: element to bind the betDecrease event to
+				linesIncrease: '#increaseLines',// CSS Selector: element to bind the linesIncrease event to
+				linesDecrease: '#decreaseLines',// CSS Selector: element to bind the linesDecrease event to
+				easing : 'linear',				// String: easing type for final spin
+				time : 2000,					// Number: total time of spin animation
+				loops : 16,						// Number: times it will spin during the animation
+				// Function: runs on spin start,
 				onStart : function() {
 					console.log('onStart')
 					$('.dvSlot').removeClass('winner');
 					$('#playFancy').removeClass('isPulsing pulse');
 					$('#info_pleasePressSpin').addClass('hidden');
 				},
+				// Function: run on spin end. It is passed (finalNumbers:Array). 
+				//			 finalNumbers gives the index of the li each slot stopped on in order.
 				onEnd : function () {
 					console.log('onEnd')
 					$('#playFancy').addClass('isPulsing');
 					$('#info_pleasePressSpin').removeClass('hidden');
 				},
+				// Function: run on winning number. It is passed (winCount:Number, winners:Array)
 				onWin : function(winCount, winners) {
 					console.log('onWin')
 					// only fires if you win
@@ -240,14 +244,6 @@
 					$.each(winners, function() {
 						this.addClass('winner');
 					});
-
-					// react to the # of winning slots
-					if ( winCount === 1 ) {
-						//alert('You got ' + winCount + ' 7!!!');
-					} else if ( winCount > 1 ) {
-						//alert('You got ' + winCount + ' 7?s!!!');
-					}
-
 				}
 			});
 
