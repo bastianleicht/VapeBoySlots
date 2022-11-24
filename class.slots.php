@@ -200,9 +200,11 @@ class TPoint {
 			// Randomize Items on 5 Rows and 3 Columns
 			$columns = array();
 			for ($i=1; $i<=5; $i++) {
+				// Generate populated Comumns
 				$SlotsItems = array();
 				for ($j=1; $j<=3; $j++) {
 					//array_rand($this->_objItems, 1)
+					// Add randomized Items to Column
 					$SlotsItems[] = $this->_objItems[array_rand($this->_objItems, 1)];
 				}
 				$columns[] = $SlotsItems;

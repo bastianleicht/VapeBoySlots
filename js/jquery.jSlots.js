@@ -112,10 +112,10 @@ soundEl['cauldron'].loop	= true;
 		base._objs		= [];
 		// Default Lines
 		base.betLines	= 10;
-		// Wert in Cent 50ct
+		// Values in Cent
 		base.betBase	= 50;
 		
-		//Werte in Cent
+		//Values in Cent
 		base.betValue	= 1;
 		base.betCredits	= 50000;
 		base.betAward	= 0;
