@@ -44,5 +44,5 @@ Distributed under the BSD 2-Clause License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* Based on [jQuery jSlots Plugin](http://matthewlein.com/jslot/)
+* Based on [jQuery jSlots Plugin](https://matthewlein.com/tools/jquery-jslots)
 * The Images are copied straight from the Internet.
